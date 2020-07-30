@@ -23,5 +23,10 @@ namespace FourRowClient
         {
             InitializeComponent();
         }
+
+        private void ButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

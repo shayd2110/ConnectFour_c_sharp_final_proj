@@ -6,7 +6,137 @@
         xmlns:local="clr-namespace:FourRowClient"
         mc:Ignorable="d"
         Title="four row game window" Height="450" Width="800" ResizeMode="NoResize">
-    <Grid>
-        
-    </Grid>
+	<DockPanel DockPanel.Dock="Bottom" Name="BoardPanel">
+		<Canvas Height="300" Width="350" Background="Blue">
+			<Border BorderBrush="Black" BorderThickness="2">
+				<Grid x:Name="innerGrid">
+					<Border BorderBrush="Black" BorderThickness="2" Grid.ColumnSpan="7"/>
+					<Border BorderBrush="Black" BorderThickness="2" Grid.Row="1"  Grid.ColumnSpan="7"/>
+					<Border BorderBrush="Black" BorderThickness="2" Grid.Row="2" Grid.ColumnSpan="7"/>
+					<Border BorderBrush="Black" BorderThickness="2" Grid.Row="3" Grid.ColumnSpan="7"/>
+					<Border BorderBrush="Black" BorderThickness="2" Grid.Row="4" Grid.ColumnSpan="7"/>
+					<Border BorderBrush="Black" BorderThickness="2" Grid.Row="5" Grid.ColumnSpan="7"/>
+					<Border BorderBrush="Black" BorderThickness="2" Grid.Row="6" Grid.ColumnSpan="7"/>
+
+					<Border BorderBrush="Black" BorderThickness="2" Grid.RowSpan="7"/>
+					<Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.RowSpan="7"/>
+					<Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Grid.RowSpan="7"/>
+					<Border BorderBrush="Black" BorderThickness="2" Grid.Column="3" Grid.RowSpan="7"/>
+					<Border BorderBrush="Black" BorderThickness="2" Grid.Column="4" Grid.RowSpan="7"/>
+					<Border BorderBrush="Black" BorderThickness="2" Grid.Column="5" Grid.RowSpan="7"/>
+					<Border BorderBrush="Black" BorderThickness="2" Grid.Column="6" Grid.RowSpan="7"/>
+
+
+					<Grid.RowDefinitions>
+						<RowDefinition Height="50"/>
+						<RowDefinition Height="50" />
+						<RowDefinition Height="50"/>
+						<RowDefinition Height="50"/>
+						<RowDefinition Height="50"/>
+						<RowDefinition Height="50"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="50"/>
+						<ColumnDefinition Width="50"/>
+						<ColumnDefinition Width="50"/>
+						<ColumnDefinition Width="50"/>
+						<ColumnDefinition Width="50"/>
+						<ColumnDefinition Width="50"/>
+						<ColumnDefinition Width="50"/>
+					</Grid.ColumnDefinitions>
+
+
+					<Ellipse Name="Cell00" Grid.Row="0" Grid.Column="0" Fill="{Binding BoardLocationColors[0]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="0" Grid.Column="0" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell01" Grid.Row="0" Grid.Column="1" Fill="{Binding BoardLocationColors[1]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="0" Grid.Column="1" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell02" Grid.Row="0" Grid.Column="2" Fill="{Binding BoardLocationColors[2]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="0" Grid.Column="2" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell03" Grid.Row="0" Grid.Column="3" Fill="{Binding BoardLocationColors[3]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="0" Grid.Column="3" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell04" Grid.Row="0" Grid.Column="4" Fill="{Binding BoardLocationColors[4]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="0" Grid.Column="4" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell05" Grid.Row="0" Grid.Column="5" Fill="{Binding BoardLocationColors[5]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="0" Grid.Column="4" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell06" Grid.Row="0" Grid.Column="6" Fill="{Binding BoardLocationColors[6]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="0" Grid.Column="6" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+
+					<Ellipse Name="Cell10" Grid.Row="1" Grid.Column="0" Fill="{Binding BoardLocationColors[7]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="1" Grid.Column="0" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell11" Grid.Row="1" Grid.Column="1" Fill="{Binding BoardLocationColors[8]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="1" Grid.Column="1" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell12" Grid.Row="1" Grid.Column="2" Fill="{Binding BoardLocationColors[9]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="1" Grid.Column="2" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell13" Grid.Row="1" Grid.Column="3" Fill="{Binding BoardLocationColors[10]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="1" Grid.Column="3" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell14" Grid.Row="1" Grid.Column="4" Fill="{Binding BoardLocationColors[11]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="1" Grid.Column="4" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell15" Grid.Row="1" Grid.Column="5" Fill="{Binding BoardLocationColors[12]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="1" Grid.Column="5" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell16" Grid.Row="1" Grid.Column="6" Fill="{Binding BoardLocationColors[13]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="1" Grid.Column="6" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+
+					<Ellipse Name="Cell20" Grid.Row="2" Grid.Column="0" Fill="{Binding BoardLocationColors[14]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="2" Grid.Column="0" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell21" Grid.Row="2" Grid.Column="1" Fill="{Binding BoardLocationColors[15]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="2" Grid.Column="1" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell22" Grid.Row="2" Grid.Column="2" Fill="{Binding BoardLocationColors[16]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="2" Grid.Column="2" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell23" Grid.Row="2" Grid.Column="3" Fill="{Binding BoardLocationColors[17]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="2" Grid.Column="3" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell24" Grid.Row="2" Grid.Column="4" Fill="{Binding BoardLocationColors[18]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="2" Grid.Column="4" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell25" Grid.Row="2" Grid.Column="5" Fill="{Binding BoardLocationColors[19]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="2" Grid.Column="5" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell26" Grid.Row="2" Grid.Column="6" Fill="{Binding BoardLocationColors[20]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="2" Grid.Column="6" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+
+					<Ellipse Name="Cell30" Grid.Row="3" Grid.Column="0" Fill="{Binding BoardLocationColors[21]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="3" Grid.Column="0" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell31" Grid.Row="3" Grid.Column="1" Fill="{Binding BoardLocationColors[22]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="3" Grid.Column="1" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell32" Grid.Row="3" Grid.Column="2" Fill="{Binding BoardLocationColors[23]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="3" Grid.Column="2" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell33" Grid.Row="3" Grid.Column="3" Fill="{Binding BoardLocationColors[24]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="3" Grid.Column="3" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell34" Grid.Row="3" Grid.Column="4" Fill="{Binding BoardLocationColors[25]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="3" Grid.Column="4" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell35" Grid.Row="3" Grid.Column="5" Fill="{Binding BoardLocationColors[26]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="3" Grid.Column="5" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell36" Grid.Row="3" Grid.Column="6" Fill="{Binding BoardLocationColors[27]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="3" Grid.Column="6" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+
+					<Ellipse Name="Cell40" Grid.Row="4" Grid.Column="0" Fill="{Binding BoardLocationColors[28]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="4" Grid.Column="0" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell41" Grid.Row="4" Grid.Column="1" Fill="{Binding BoardLocationColors[29]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="4" Grid.Column="1" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell42" Grid.Row="4" Grid.Column="2" Fill="{Binding BoardLocationColors[30]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="4" Grid.Column="2" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell43" Grid.Row="4" Grid.Column="3" Fill="{Binding BoardLocationColors[31]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="4" Grid.Column="3" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell44" Grid.Row="4" Grid.Column="4" Fill="{Binding BoardLocationColors[32]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="4" Grid.Column="4" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell45" Grid.Row="4" Grid.Column="5" Fill="{Binding BoardLocationColors[33]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="4" Grid.Column="5" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell46" Grid.Row="4" Grid.Column="6" Fill="{Binding BoardLocationColors[34]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="4" Grid.Column="6" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+
+					<Ellipse Name="Cell50" Grid.Row="5" Grid.Column="0" Fill="{Binding BoardLocationColors[35]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="5" Grid.Column="0" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell51" Grid.Row="5" Grid.Column="1" Fill="{Binding BoardLocationColors[36]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="5" Grid.Column="1" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell52" Grid.Row="5" Grid.Column="2" Fill="{Binding BoardLocationColors[37]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="5" Grid.Column="2" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell53" Grid.Row="5" Grid.Column="3" Fill="{Binding BoardLocationColors[38]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="5" Grid.Column="3" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell54" Grid.Row="5" Grid.Column="4" Fill="{Binding BoardLocationColors[39]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="5" Grid.Column="4" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell55" Grid.Row="5" Grid.Column="5" Fill="{Binding BoardLocationColors[40]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="5" Grid.Column="5" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+					<Ellipse Name="Cell56" Grid.Row="5" Grid.Column="6" Fill="{Binding BoardLocationColors[41]}" Stroke="Black"></Ellipse>
+					<Button Grid.Row="5" Grid.Column="6" Click="ButtonClick" Opacity="0" IsEnabled="{Binding IsBoardEnabled}"/>
+				</Grid>
+			</Border>
+		</Canvas>
+	</DockPanel>
 </Window>
