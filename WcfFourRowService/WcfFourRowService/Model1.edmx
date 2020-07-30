@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="fourinrowDB_shay_shalevModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GameDetails">
+          <Key>
+            <PropertyRef Name="GameId" />
+          </Key>
+          <Property Name="GameId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User1Name" Type="nvarchar(max)" />
+          <Property Name="User2Name" Type="nvarchar(max)" />
+          <Property Name="WinningUserName" Type="nvarchar(max)" />
+          <Property Name="PointsUser1" Type="int" Nullable="false" />
+          <Property Name="PointsUser2" Type="int" Nullable="false" />
+          <Property Name="GameDateStart" Type="datetime" Nullable="false" />
+          <Property Name="GameDateEnd" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GameDetailsNows">
+          <Key>
+            <PropertyRef Name="GameNowId" />
+          </Key>
+          <Property Name="GameNowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User1Name" Type="nvarchar(max)" />
+          <Property Name="User2Name" Type="nvarchar(max)" />
+          <Property Name="GameDateStart" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="HashedPassword" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="fourinrowDB_shay_shalevModelStoreContainer">
+          <EntitySet Name="GameDetails" EntityType="Self.GameDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameDetailsNows" EntityType="Self.GameDetailsNows" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="fourinrowDB_shay_shalevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GameDetail">
+          <Key>
+            <PropertyRef Name="GameId" />
+          </Key>
+          <Property Name="GameId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User1Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="User2Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WinningUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PointsUser1" Type="Int32" Nullable="false" />
+          <Property Name="PointsUser2" Type="Int32" Nullable="false" />
+          <Property Name="GameDateStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GameDateEnd" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="GameDetailsNow">
+          <Key>
+            <PropertyRef Name="GameNowId" />
+          </Key>
+          <Property Name="GameNowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User1Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="User2Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GameDateStart" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HashedPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="fourinrowDB_shay_shalevEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GameDetails" EntityType="Self.GameDetail" />
+          <EntitySet Name="GameDetailsNows" EntityType="Self.GameDetailsNow" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="fourinrowDB_shay_shalevModelStoreContainer" CdmEntityContainer="fourinrowDB_shay_shalevEntities">
+          <EntitySetMapping Name="GameDetails">
+            <EntityTypeMapping TypeName="fourinrowDB_shay_shalevModel.GameDetail">
+              <MappingFragment StoreEntitySet="GameDetails">
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+                <ScalarProperty Name="User1Name" ColumnName="User1Name" />
+                <ScalarProperty Name="User2Name" ColumnName="User2Name" />
+                <ScalarProperty Name="WinningUserName" ColumnName="WinningUserName" />
+                <ScalarProperty Name="PointsUser1" ColumnName="PointsUser1" />
+                <ScalarProperty Name="PointsUser2" ColumnName="PointsUser2" />
+                <ScalarProperty Name="GameDateStart" ColumnName="GameDateStart" />
+                <ScalarProperty Name="GameDateEnd" ColumnName="GameDateEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameDetailsNows">
+            <EntityTypeMapping TypeName="fourinrowDB_shay_shalevModel.GameDetailsNow">
+              <MappingFragment StoreEntitySet="GameDetailsNows">
+                <ScalarProperty Name="GameNowId" ColumnName="GameNowId" />
+                <ScalarProperty Name="User1Name" ColumnName="User1Name" />
+                <ScalarProperty Name="User2Name" ColumnName="User2Name" />
+                <ScalarProperty Name="GameDateStart" ColumnName="GameDateStart" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="fourinrowDB_shay_shalevModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="HashedPassword" ColumnName="HashedPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
