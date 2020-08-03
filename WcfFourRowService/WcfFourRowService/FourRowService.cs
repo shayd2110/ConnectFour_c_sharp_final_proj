@@ -6,7 +6,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Security.Principal;
 using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.Text;
+using System.Windows.Forms;
 
 /*WcfFourRowService namespace*/
 namespace WcfFourRowService
@@ -16,30 +18,150 @@ namespace WcfFourRowService
     /// <summary>
     /// class that implements the IFourRowService - same brief as there
     /// </summary>
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single,
+        ConcurrencyMode = ConcurrencyMode.Multiple,
+        IncludeExceptionDetailInFaults =true, 
+        UseSynchronizationContext = false)]
+   
     public class FourRowService : IFourRowService
     {
         /*data members*/
-
+        int numClients = 0;
+        int connectedClientsCnt = 0;
+        public static Dictionary<string, IFourRowServiceCallback> clients = new Dictionary<string, IFourRowServiceCallback>();
+        public Dictionary<string, IFourRowServiceCallback> connectedClients = new Dictionary<string, IFourRowServiceCallback>();
+        Dictionary<int, Game> games = new Dictionary<int, Game>();
 
         public void clientConnected(string userName, string hashedPasswd)
         {
-            throw new NotImplementedException();
+            
+            if(!clients.ContainsKey(userName))
+            {
+                UserDoesntExistsFault userExists = new UserDoesntExistsFault
+                {
+                    Details = "User name " + userName + " Doesnt exists. Please register"
+                };
+                throw new FaultException<UserDoesntExistsFault>(userExists);
+            }
+
+
+                using (var ctx = new FourinrowDBContext())
+                {
+                    var user = (from u in ctx.Users
+                                where u.UserName == userName
+                                select u).FirstOrDefault();
+                    
+                    if (user.HashedPassword != hashedPasswd)
+                    {
+                        WrongPasswordFault fault = new WrongPasswordFault
+                        { Details = "Worng PassWord!" };
+                        throw new FaultException<WrongPasswordFault>(fault);
+                    }
+                    else
+                    {
+                        connectedClientsCnt++;
+                        connectedClients.Add(userName, clients[userName]);
+                    }
+
+                }
+
+
         }
 
         public void clientRegisterd(string userName, string hashedPasswd)
         {
-            throw new NotImplementedException();
+            if (clients.ContainsKey(userName))
+            {
+                UserExistsFault userExists = new UserExistsFault
+                {
+                    Details = "User name " + userName + " already exists. Try something else"
+                };
+                throw new FaultException<UserExistsFault>(userExists);
+            }
+
+
+                using (var ctx = new FourinrowDBContext())
+                {
+                    var user = (from u in ctx.Users
+                                where u.UserName == userName
+                                select u).FirstOrDefault();
+                    if (user == null)
+                    {
+                        User newUser = new User
+                        {
+                            UserName = userName,
+                            HashedPassword = hashedPasswd
+                        };
+                        ctx.Users.Add(newUser);
+                        ctx.SaveChanges();
+                    }
+                    //if (user.HashedPassword != hashedPasswd)
+                    //{
+                    //    WrongPasswordFault fault = new WrongPasswordFault
+                    //    { Details = "Worng PassWord!" };
+                    //    throw new FaultException<WrongPasswordFault>(fault);
+                    //}
+                        numClients++;
+                        IFourRowServiceCallback callback = OperationContext.Current.GetCallbackChannel<IFourRowServiceCallback>(); // object of client
+                        clients.Add(userName, callback);
+
+                }
+
         }
 
         public void clientDisconnected(string userName)
         {
-            throw new NotImplementedException();
+            connectedClients.Remove(userName);
         }
 
         public List<string> getClientsThatNotPlayNow()
         {
             throw new NotImplementedException();
+        }
+
+        public bool  clearUsers()
+        {
+            try
+            {
+                using (var ctx = new FourinrowDBContext())
+                {
+                    string res = "elements: ";
+                    int cnt = 0;
+                    var x = (from u in ctx.Users
+                             select u); // clear db
+                    foreach (var item in x)
+                    {
+                        res += item.UserName.ToString() + " ";
+                        cnt++;
+                        if (x == null)
+                            break;
+                        ctx.Users.Remove(item);
+                        //ctx.SaveChanges();
+                    }
+                    MessageBox.Show(res + " element count: " + cnt.ToString());
+
+                    ctx.SaveChanges();
+
+                    var x1 = (from u in ctx.Users
+                              orderby u.UserName descending
+                              select u).FirstOrDefault();
+                    if (x1 == null)
+                    {
+                        clients.Clear();
+                        return true;
+                    }
+
+                }
+            }
+            catch (DbException dex)
+            {
+                throw new FaultException<DbException>(dex);
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException<Exception>(ex);
+            }
+            return false;
         }
 
         #region someMethodsThatConnectedToDataBaseQueries
@@ -453,6 +575,10 @@ namespace WcfFourRowService
             throw new NotImplementedException();
         }
 
+        public MoveResult ReportMove(int RowLocation, int ColLocation, int player)
+        {
+            throw new NotImplementedException();
+        }
     }/*end of -FourRowService- class*/
 
 }/*end of -WcfFourRowService- namespace*/

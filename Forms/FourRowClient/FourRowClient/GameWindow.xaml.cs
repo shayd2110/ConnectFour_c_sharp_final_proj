@@ -26,7 +26,18 @@ namespace FourRowClient
 
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Button clickedButton = (Button)sender;
+                int RowLocation = Convert.ToInt32(clickedButton.Name.Substring(6,1));
+                int ColLocation = Convert.ToInt32(clickedButton.Name.Substring(8, 1));
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+                
         }
     }
 }

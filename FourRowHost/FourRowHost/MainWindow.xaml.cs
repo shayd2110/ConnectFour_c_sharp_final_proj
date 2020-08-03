@@ -29,7 +29,7 @@ namespace FourRowHost
             try
             {
                 host.Open();
-                lb1.Content = "Service is running";
+                lb1.Content = "FourRowService is running";
             }
             catch (Exception ex)
             {

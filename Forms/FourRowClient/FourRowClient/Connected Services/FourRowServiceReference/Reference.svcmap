@@ -10,7 +10,8 @@
     <GenerateMessageContracts>false</GenerateMessageContracts>
     <NamespaceMappings />
     <CollectionMappings>
-      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+      <CollectionMapping TypeName="System.Collections.Hashtable" Category="Dictionary" />
     </CollectionMappings>
     <GenerateSerializableTypes>true</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
@@ -24,9 +25,15 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="e339a32c-e4d5-4b15-a67a-67fb614373de" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd5" />
+    <MetadataFile FileName="FourRowService.wsdl" MetadataType="Wsdl" ID="32b9f0dc-6d47-458f-a599-78eaead6e785" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?wsdl" />
+    <MetadataFile FileName="item11.xsd" MetadataType="Schema" ID="1bfcab5c-c2e6-4923-8665-8ae21c27d5fe" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd3" />
     <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="ab8979f6-ea00-4ee3-b433-ecf93ca193fa" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd0" />
     <MetadataFile FileName="item.disco" MetadataType="Disco" ID="be87d1ab-cc9b-4629-8d0a-b6769804a4bd" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?disco" />
-    <MetadataFile FileName="FourRowService.wsdl" MetadataType="Wsdl" ID="32b9f0dc-6d47-458f-a599-78eaead6e785" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?wsdl" />
+    <MetadataFile FileName="item12.xsd" MetadataType="Schema" ID="4f91933d-1d81-45f8-9be7-d99c6b165fa8" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd6" />
+    <MetadataFile FileName="item13.xsd" MetadataType="Schema" ID="ae51bf68-4a37-4606-bf85-9a4679b1b2b2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd4" />
+    <MetadataFile FileName="item14.xsd" MetadataType="Schema" ID="f647600e-74cd-4430-9e15-4e1be692e6a1" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd2" />
+    <MetadataFile FileName="item15.xsd" MetadataType="Schema" ID="83bc2939-b19f-4cee-8874-f8ffba22e098" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
