@@ -15,6 +15,51 @@ namespace FourRowClient.FourRowServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserAlreadyConnectedFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+    [System.SerializableAttribute()]
+    public partial class UserAlreadyConnectedFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UserDoesntExistsFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
     [System.SerializableAttribute()]
     public partial class UserDoesntExistsFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -218,6 +263,7 @@ namespace FourRowClient.FourRowServiceReference {
     public interface IFourRowService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/clientConnected", ReplyAction="http://tempuri.org/IFourRowService/clientConnectedResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(FourRowClient.FourRowServiceReference.UserAlreadyConnectedFault), Action="http://tempuri.org/IFourRowService/clientConnectedUserAlreadyConnectedFaultFault", Name="UserAlreadyConnectedFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
         [System.ServiceModel.FaultContractAttribute(typeof(FourRowClient.FourRowServiceReference.UserDoesntExistsFault), Action="http://tempuri.org/IFourRowService/clientConnectedUserDoesntExistsFaultFault", Name="UserDoesntExistsFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
         [System.ServiceModel.FaultContractAttribute(typeof(FourRowClient.FourRowServiceReference.WrongPasswordFault), Action="http://tempuri.org/IFourRowService/clientConnectedWrongPasswordFaultFault", Name="WrongPasswordFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
         void clientConnected(string userName, string hashedPasswd);
