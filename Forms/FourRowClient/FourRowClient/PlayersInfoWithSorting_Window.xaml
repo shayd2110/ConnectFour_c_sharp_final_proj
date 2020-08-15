@@ -1,0 +1,67 @@
+﻿<Window x:Class="FourRowClient.PlayersInfoWithSorting_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FourRowClient"
+        mc:Ignorable="d"
+        Title="users statics window" Height="400" Width="500" Loaded="Window_Loaded" ResizeMode="NoResize">
+	<Grid >
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="0.5*"/>
+			<RowDefinition Height="1.5*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Label Grid.ColumnSpan="3" Content="All the users statics" 
+               Margin="150,0,0,0" FontStyle="Italic" Foreground="purple" FontSize="20" HorizontalAlignment="Stretch"/>
+		<Label Grid.ColumnSpan="3" Grid.RowSpan="2" Content="with sorting options" 
+               Margin="150,23,0,0" FontStyle="Italic" Foreground="purple" FontSize="18"/>
+		<ListBox Name="lbUsersStats" Grid.Row="1" Height="140" Width="350" Margin="72,-90,71,42" 
+                 Grid.ColumnSpan="3" Grid.RowSpan="3" FontSize="18" FontStyle="Italic" Foreground="Purple" 
+                 ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                 BorderBrush="Black"
+                 BorderThickness="2"
+                 ScrollViewer.CanContentScroll="True"
+                 IsHitTestVisible="True">
+			<ListBox.ItemContainerStyle>
+				<Style TargetType="ListBoxItem">
+					<Setter Property="IsHitTestVisible" Value="False" />
+				</Style>
+			</ListBox.ItemContainerStyle>
+		</ListBox>
+		<Label Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="3" Content="Sorting options:" 
+               Margin="160,-10,0,0" FontStyle="Italic" Foreground="purple" FontSize="20"/>
+		<Button Name="byName" Grid.Row="2" Grid.RowSpan="2" Click="byName_Click"
+                Height="40" Width="80" Margin="0,-50,0,0" FontSize="15" FontWeight="Bold" Foreground="DarkBlue">
+
+			<TextBlock Text="Sort by Names" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		</Button>
+		<Button Name="byGames" Grid.Row="2" Grid.RowSpan="2" Click="byGames_Click"
+                Height="40" Width="85" Margin="0,60,0,0" FontSize="15" FontWeight="Bold" Foreground="DarkBlue"
+                >
+
+			<TextBlock Text="Sort by Games" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		</Button>
+		<Button Name="byPoints" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Click="byPoints_Click"
+                Height="40" Width="85" Margin="0,0,0,0" FontSize="15" FontWeight="Bold" Foreground="DarkBlue">
+
+			<TextBlock Text="Sort by Points" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		</Button>
+		<Button Name="byWins" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" Click="byWins_Click"
+                Height="40" Width="80" Margin="0,-50,0,0" FontSize="15" FontWeight="Bold" Foreground="DarkBlue">
+
+			<TextBlock Text="Sort by Wins" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		</Button>
+		<Button Name="byLoses" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" Click="byLoses_Click"
+                Height="40" Width="85" Margin="0,60,0,0" FontSize="15" FontWeight="Bold" Foreground="DarkBlue">
+
+			<TextBlock Text="Sort by Loses" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+		</Button>
+	</Grid>
+</Window>

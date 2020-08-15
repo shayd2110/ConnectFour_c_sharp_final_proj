@@ -53,7 +53,6 @@ namespace FourRowClient
             catch (FaultException<UserExistsFault> fault)
             {
                 MessageBox.Show(fault.Detail.Details);
-                return;
             }
             catch (Exception ex)
             {

@@ -20,23 +20,22 @@ namespace WcfFourRowService
     /// </summary>
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single,
         ConcurrencyMode = ConcurrencyMode.Multiple,
-        IncludeExceptionDetailInFaults = true,
+        IncludeExceptionDetailInFaults =true, 
         UseSynchronizationContext = false)]
-
+   
     public class FourRowService : IFourRowService
     {
         /*data members*/
         int numClients = 0;
         int connectedClientsCnt = 0;
-        public Dictionary<string, IFourRowServiceCallback> clients = new Dictionary<string, IFourRowServiceCallback>();
-        public Dictionary<string, IFourRowServiceCallback> connectedClient = new Dictionary<string, IFourRowServiceCallback>();
+        public static Dictionary<string, IFourRowServiceCallback> clients = new Dictionary<string, IFourRowServiceCallback>();
+        public Dictionary<string, IFourRowServiceCallback> connectedClients = new Dictionary<string, IFourRowServiceCallback>();
         Dictionary<int, Game> games = new Dictionary<int, Game>();
-
 
         public void clientConnected(string userName, string hashedPasswd)
         {
-
-            if (!clients.ContainsKey(userName))
+            
+            if(!clients.ContainsKey(userName))
             {
                 UserDoesntExistsFault userExists = new UserDoesntExistsFault
                 {
@@ -44,37 +43,27 @@ namespace WcfFourRowService
                 };
                 throw new FaultException<UserDoesntExistsFault>(userExists);
             }
-            if (connectedClient.ContainsKey(userName))
-            {
-                UserAlreadyConnectedFault userAlreadyConnected = new UserAlreadyConnectedFault
+
+
+                using (var ctx = new FourinrowDBContext())
                 {
-                    Details = "User name " + userName + " Already Connected"
-                };
-                throw new FaultException<UserAlreadyConnectedFault>(userAlreadyConnected);
-            }
+                    var user = (from u in ctx.Users
+                                where u.UserName == userName
+                                select u).FirstOrDefault();
+                    
+                    if (user.HashedPassword != hashedPasswd)
+                    {
+                        WrongPasswordFault fault = new WrongPasswordFault
+                        { Details = "Worng PassWord!" };
+                        throw new FaultException<WrongPasswordFault>(fault);
+                    }
+                    else
+                    {
+                        connectedClientsCnt++;
+                        connectedClients.Add(userName, clients[userName]);
+                    }
 
-
-            using (var ctx = new FourinrowDBContext())
-            {
-                var user = (from u in ctx.Users
-                            where u.UserName == userName
-                            select u).FirstOrDefault();
-
-                if (user.HashedPassword != hashedPasswd)
-                {
-                    WrongPasswordFault fault = new WrongPasswordFault
-                    { Details = "Worng PassWord!" };
-                    throw new FaultException<WrongPasswordFault>(fault);
                 }
-                else
-                {
-                    connectedClientsCnt++;
-                    if (connectedClient.ContainsKey(userName))
-                        return;
-                    connectedClient.Add(userName, clients[userName]);
-                }
-
-            }
 
 
         }
@@ -91,46 +80,46 @@ namespace WcfFourRowService
             }
 
 
-            using (var ctx = new FourinrowDBContext())
-            {
-                var user = (from u in ctx.Users
-                            where u.UserName == userName
-                            select u).FirstOrDefault();
-                if (user == null)
+                using (var ctx = new FourinrowDBContext())
                 {
-                    User newUser = new User
+                    var user = (from u in ctx.Users
+                                where u.UserName == userName
+                                select u).FirstOrDefault();
+                    if (user == null)
                     {
-                        UserName = userName,
-                        HashedPassword = hashedPasswd
-                    };
-                    ctx.Users.Add(newUser);
-                    ctx.SaveChanges();
+                        User newUser = new User
+                        {
+                            UserName = userName,
+                            HashedPassword = hashedPasswd
+                        };
+                        ctx.Users.Add(newUser);
+                        ctx.SaveChanges();
+                    }
+                    //if (user.HashedPassword != hashedPasswd)
+                    //{
+                    //    WrongPasswordFault fault = new WrongPasswordFault
+                    //    { Details = "Worng PassWord!" };
+                    //    throw new FaultException<WrongPasswordFault>(fault);
+                    //}
+                        numClients++;
+                        IFourRowServiceCallback callback = OperationContext.Current.GetCallbackChannel<IFourRowServiceCallback>(); // object of client
+                        clients.Add(userName, callback);
+
                 }
-                //if (user.HashedPassword != hashedPasswd)
-                //{
-                //    WrongPasswordFault fault = new WrongPasswordFault
-                //    { Details = "Worng PassWord!" };
-                //    throw new FaultException<WrongPasswordFault>(fault);
-                //}
-                numClients++;
-                IFourRowServiceCallback callback = OperationContext.Current.GetCallbackChannel<IFourRowServiceCallback>(); // object of client
-                clients.Add(userName, callback);
-            }
 
         }
 
         public void clientDisconnected(string userName)
         {
-            connectedClient.Remove(userName);
-            connectedClientsCnt--;
+            connectedClients.Remove(userName);
         }
 
-        public IEnumerable<string> getClientsThatNotPlayNow()
+        public List<string> getClientsThatNotPlayNow()
         {
-            return connectedClient.Keys;
+            throw new NotImplementedException();
         }
 
-        public bool clearUsers()
+        public bool  clearUsers()
         {
             try
             {
@@ -180,7 +169,7 @@ namespace WcfFourRowService
         public List<string> getAllUsersGamesHistory()
         {
             List<string> allUsersGamesHistory = new List<string>();
-
+            
             try
             {
                 List<UserHistory> usersHistory = allUsersGamesHistoryPrivately();
@@ -399,7 +388,7 @@ namespace WcfFourRowService
                         someString += $"game date: {gsf.gameDate}";
 
                         gamesthatPlayedSofar.Add(someString);
-
+                    
                     }/*end of loop*/
 
                     return gamesthatPlayedSofar;
@@ -430,14 +419,14 @@ namespace WcfFourRowService
                                     select gdn).ToList();
 
                     int i; i = 1;
-
+                    
                     /*doing the thing*/
                     foreach (var gn in gamesNow)
                     {
                         gamesThatPlaysNow.Add($"#{i++}: {gn.User1Name} against " +
                             $"{gn.User2Name}, start time: " +
                             $"{gn.GameDateStart.ToString("t", DateTimeFormatInfo.InvariantInfo)}");
-
+                    
                     }/*end of loop*/
 
                     return gamesThatPlaysNow;
@@ -583,7 +572,7 @@ namespace WcfFourRowService
 
         public bool ping()
         {
-            return true;
+            throw new NotImplementedException();
         }
 
         public MoveResult ReportMove(int RowLocation, int ColLocation, int player)

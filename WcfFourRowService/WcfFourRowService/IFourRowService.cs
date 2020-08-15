@@ -18,7 +18,6 @@ namespace WcfFourRowService
     public interface IFourRowService
     {
         /*clientConnected method signature*/
-        [FaultContract(typeof(UserAlreadyConnectedFault))]
         [FaultContract(typeof(UserDoesntExistsFault))]
         [FaultContract(typeof(WrongPasswordFault))]
         [OperationContract]
@@ -36,7 +35,7 @@ namespace WcfFourRowService
 
         /*getClientsThatNotPlayNow method signature*/
         [OperationContract]
-        IEnumerable<string> getClientsThatNotPlayNow();
+        List<string> getClientsThatNotPlayNow();
 
         /*some methods signatures that connected to data base queries*/
         

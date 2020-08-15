@@ -28,8 +28,8 @@ namespace FourRowClient
     /// </summary>
     public partial class Login : Window
     {
-        private DoubleAnimation da = new DoubleAnimation();
-        private Utils utils;
+        DoubleAnimation da = new DoubleAnimation();
+        Utils utils;
         /*constructor*/
         public Login()
         {
@@ -63,29 +63,14 @@ namespace FourRowClient
             catch (FaultException<UserDoesntExistsFault> fault)
             {
                 MessageBox.Show(fault.Detail.Details);
-                tbPasswrd.Clear();
-                tbUsername.Clear();
-                return;
-            }
-            catch (FaultException<UserAlreadyConnectedFault> fault)
-            {
-                MessageBox.Show(fault.Detail.Details);
-                tbPasswrd.Clear();
-                tbUsername.Clear();
-                return;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-               // throw new FaultException<Exception>(ex);
+                throw new FaultException<Exception>(ex);
             }
+            tbPasswrd.Clear();
+            tbUsername.Clear();
 
-
-            WaitingWindow ww = new WaitingWindow();
-            ww.Username = userName;
-            ww.Client = client;
-            this.Close();
-            ww.Show();
         }
         
 
