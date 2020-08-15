@@ -1,0 +1,23 @@
+﻿<Window x:Class="FourRowClient.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FourRowClient"
+        mc:Ignorable="d"
+        Title="LogIn" Height="300" Width="300">
+	<Grid Name="mainGrid">
+        <StackPanel>
+            <Label Content="--------------------------------------------------------" FontSize="15" Foreground="DarkBlue" />
+            <Label Foreground="DarkBlue">Username:</Label>
+            <TextBox Margin="10" Name="tbUsername"/>
+            <Label Foreground="DarkBlue">Password:</Label>
+			<PasswordBox  Name="tbPasswrd" Margin="10"/>
+            <Button Foreground="DarkBlue" Margin="50,0,50,0" Content="Connect" Click="Button_Connect_Click"/>
+			<Button Foreground="DarkBlue" Margin="50,10,50,10" Content="Register" Click="ButtonRegister_Click"/>
+			<Label Content="--------------------------------------------------------" FontSize="15" Foreground="DarkBlue"/>
+           
+
+        </StackPanel>
+    </Grid>
+</Window>

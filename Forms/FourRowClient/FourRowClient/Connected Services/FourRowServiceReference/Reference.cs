@@ -9,17 +9,411 @@
 //------------------------------------------------------------------------------
 
 namespace FourRowClient.FourRowServiceReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserAlreadyConnectedFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+    [System.SerializableAttribute()]
+    public partial class UserAlreadyConnectedFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserDoesntExistsFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+    [System.SerializableAttribute()]
+    public partial class UserDoesntExistsFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WrongPasswordFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+    [System.SerializableAttribute()]
+    public partial class WrongPasswordFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserExistsFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+    [System.SerializableAttribute()]
+    public partial class UserExistsFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OpponentDisconnectedFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+    [System.SerializableAttribute()]
+    public partial class OpponentDisconnectedFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MoveResult", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+    public enum MoveResult : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        YouWon = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        YouLose = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Draw = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NotYourTurn = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GameOn = 4,
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FourRowServiceReference.IFourRowService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FourRowServiceReference.IFourRowService", CallbackContract=typeof(FourRowClient.FourRowServiceReference.IFourRowServiceCallback))]
     public interface IFourRowService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/lala", ReplyAction="http://tempuri.org/IFourRowService/lalaResponse")]
-        void lala();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/clientConnected", ReplyAction="http://tempuri.org/IFourRowService/clientConnectedResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(FourRowClient.FourRowServiceReference.UserAlreadyConnectedFault), Action="http://tempuri.org/IFourRowService/clientConnectedUserAlreadyConnectedFaultFault", Name="UserAlreadyConnectedFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+        [System.ServiceModel.FaultContractAttribute(typeof(FourRowClient.FourRowServiceReference.UserDoesntExistsFault), Action="http://tempuri.org/IFourRowService/clientConnectedUserDoesntExistsFaultFault", Name="UserDoesntExistsFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+        [System.ServiceModel.FaultContractAttribute(typeof(FourRowClient.FourRowServiceReference.WrongPasswordFault), Action="http://tempuri.org/IFourRowService/clientConnectedWrongPasswordFaultFault", Name="WrongPasswordFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+        void clientConnected(string userName, string hashedPasswd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/lala", ReplyAction="http://tempuri.org/IFourRowService/lalaResponse")]
-        System.Threading.Tasks.Task lalaAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/clientConnected", ReplyAction="http://tempuri.org/IFourRowService/clientConnectedResponse")]
+        System.Threading.Tasks.Task clientConnectedAsync(string userName, string hashedPasswd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/clientRegisterd", ReplyAction="http://tempuri.org/IFourRowService/clientRegisterdResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(FourRowClient.FourRowServiceReference.UserExistsFault), Action="http://tempuri.org/IFourRowService/clientRegisterdUserExistsFaultFault", Name="UserExistsFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+        void clientRegisterd(string userName, string hashedPasswd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/clientRegisterd", ReplyAction="http://tempuri.org/IFourRowService/clientRegisterdResponse")]
+        System.Threading.Tasks.Task clientRegisterdAsync(string userName, string hashedPasswd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/clientDisconnected", ReplyAction="http://tempuri.org/IFourRowService/clientDisconnectedResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(FourRowClient.FourRowServiceReference.OpponentDisconnectedFault), Action="http://tempuri.org/IFourRowService/clientDisconnectedOpponentDisconnectedFaultFau" +
+            "lt", Name="OpponentDisconnectedFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+        void clientDisconnected(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/clientDisconnected", ReplyAction="http://tempuri.org/IFourRowService/clientDisconnectedResponse")]
+        System.Threading.Tasks.Task clientDisconnectedAsync(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getClientsThatNotPlayNow", ReplyAction="http://tempuri.org/IFourRowService/getClientsThatNotPlayNowResponse")]
+        System.Collections.ObjectModel.ObservableCollection<string> getClientsThatNotPlayNow();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getClientsThatNotPlayNow", ReplyAction="http://tempuri.org/IFourRowService/getClientsThatNotPlayNowResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getClientsThatNotPlayNowAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistory", ReplyAction="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Data.Common.DbException), Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryDbExceptionFault", Name="DbException", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Common")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        System.Collections.ObjectModel.ObservableCollection<string> getAllUsersGamesHistory();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistory", ReplyAction="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getAllUsersGamesHistoryAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByName", ReplyAction="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByNameResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Data.Common.DbException), Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByNameDbExceptio" +
+            "nFault", Name="DbException", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Common")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByNameExceptionF" +
+            "ault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        System.Collections.ObjectModel.ObservableCollection<string> getAllUsersGamesHistoryOrderedByName();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByName", ReplyAction="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByNameResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getAllUsersGamesHistoryOrderedByNameAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByGames", ReplyAction="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByGamesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Data.Common.DbException), Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByGamesDbExcepti" +
+            "onFault", Name="DbException", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Common")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByGamesException" +
+            "Fault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        System.Collections.ObjectModel.ObservableCollection<string> getAllUsersGamesHistoryOrderedByGames();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByGames", ReplyAction="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByGamesResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getAllUsersGamesHistoryOrderedByGamesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByWins", ReplyAction="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByWinsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Data.Common.DbException), Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByWinsDbExceptio" +
+            "nFault", Name="DbException", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Common")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByWinsExceptionF" +
+            "ault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        System.Collections.ObjectModel.ObservableCollection<string> getAllUsersGamesHistoryOrderedByWins();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByWins", ReplyAction="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByWinsResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getAllUsersGamesHistoryOrderedByWinsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByLoses", ReplyAction="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByLosesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Data.Common.DbException), Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByLosesDbExcepti" +
+            "onFault", Name="DbException", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Common")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByLosesException" +
+            "Fault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        System.Collections.ObjectModel.ObservableCollection<string> getAllUsersGamesHistoryOrderedByLoses();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByLoses", ReplyAction="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByLosesResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getAllUsersGamesHistoryOrderedByLosesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByPoints", ReplyAction="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByPointsResponse" +
+            "")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Data.Common.DbException), Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByPointsDbExcept" +
+            "ionFault", Name="DbException", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Common")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByPointsExceptio" +
+            "nFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        System.Collections.ObjectModel.ObservableCollection<string> getAllUsersGamesHistoryOrderedByPoints();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByPoints", ReplyAction="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByPointsResponse" +
+            "")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getAllUsersGamesHistoryOrderedByPointsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/allTheGamesThatPlayesSoFar", ReplyAction="http://tempuri.org/IFourRowService/allTheGamesThatPlayesSoFarResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Data.Common.DbException), Action="http://tempuri.org/IFourRowService/allTheGamesThatPlayesSoFarDbExceptionFault", Name="DbException", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Common")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://tempuri.org/IFourRowService/allTheGamesThatPlayesSoFarExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        System.Collections.ObjectModel.ObservableCollection<string> allTheGamesThatPlayesSoFar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/allTheGamesThatPlayesSoFar", ReplyAction="http://tempuri.org/IFourRowService/allTheGamesThatPlayesSoFarResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> allTheGamesThatPlayesSoFarAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/allTheGamesThatPlayesNow", ReplyAction="http://tempuri.org/IFourRowService/allTheGamesThatPlayesNowResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Data.Common.DbException), Action="http://tempuri.org/IFourRowService/allTheGamesThatPlayesNowDbExceptionFault", Name="DbException", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Common")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://tempuri.org/IFourRowService/allTheGamesThatPlayesNowExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        System.Collections.ObjectModel.ObservableCollection<string> allTheGamesThatPlayesNow();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/allTheGamesThatPlayesNow", ReplyAction="http://tempuri.org/IFourRowService/allTheGamesThatPlayesNowResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> allTheGamesThatPlayesNowAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/allTheGamesBetweenTwoClients", ReplyAction="http://tempuri.org/IFourRowService/allTheGamesBetweenTwoClientsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Data.Common.DbException), Action="http://tempuri.org/IFourRowService/allTheGamesBetweenTwoClientsDbExceptionFault", Name="DbException", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Common")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://tempuri.org/IFourRowService/allTheGamesBetweenTwoClientsExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        System.Collections.ObjectModel.ObservableCollection<string> allTheGamesBetweenTwoClients(string userName1, string userName2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/allTheGamesBetweenTwoClients", ReplyAction="http://tempuri.org/IFourRowService/allTheGamesBetweenTwoClientsResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> allTheGamesBetweenTwoClientsAsync(string userName1, string userName2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/allTheGamesOfSomeClient", ReplyAction="http://tempuri.org/IFourRowService/allTheGamesOfSomeClientResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Data.Common.DbException), Action="http://tempuri.org/IFourRowService/allTheGamesOfSomeClientDbExceptionFault", Name="DbException", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Common")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://tempuri.org/IFourRowService/allTheGamesOfSomeClientExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        System.Collections.ObjectModel.ObservableCollection<string> allTheGamesOfSomeClient(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/allTheGamesOfSomeClient", ReplyAction="http://tempuri.org/IFourRowService/allTheGamesOfSomeClientResponse")]
+        System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> allTheGamesOfSomeClientAsync(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/clearUsers", ReplyAction="http://tempuri.org/IFourRowService/clearUsersResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Data.Common.DbException), Action="http://tempuri.org/IFourRowService/clearUsersDbExceptionFault", Name="DbException", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Common")]
+        [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="http://tempuri.org/IFourRowService/clearUsersExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
+        bool clearUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/clearUsers", ReplyAction="http://tempuri.org/IFourRowService/clearUsersResponse")]
+        System.Threading.Tasks.Task<bool> clearUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/ReportMove", ReplyAction="http://tempuri.org/IFourRowService/ReportMoveResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(FourRowClient.FourRowServiceReference.OpponentDisconnectedFault), Action="http://tempuri.org/IFourRowService/ReportMoveOpponentDisconnectedFaultFault", Name="OpponentDisconnectedFault", Namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService")]
+        FourRowClient.FourRowServiceReference.MoveResult ReportMove(int RowLocation, int ColLocation, int player);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/ReportMove", ReplyAction="http://tempuri.org/IFourRowService/ReportMoveResponse")]
+        System.Threading.Tasks.Task<FourRowClient.FourRowServiceReference.MoveResult> ReportMoveAsync(int RowLocation, int ColLocation, int player);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/ping", ReplyAction="http://tempuri.org/IFourRowService/pingResponse")]
+        bool ping();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFourRowService/ping", ReplyAction="http://tempuri.org/IFourRowService/pingResponse")]
+        System.Threading.Tasks.Task<bool> pingAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IFourRowServiceCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IFourRowService/OtherPlayerConnected")]
+        void OtherPlayerConnected();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IFourRowService/OtherPlayerMoved")]
+        void OtherPlayerMoved(FourRowClient.FourRowServiceReference.MoveResult moveResult, int location);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -28,33 +422,162 @@ namespace FourRowClient.FourRowServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class FourRowServiceClient : System.ServiceModel.ClientBase<FourRowClient.FourRowServiceReference.IFourRowService>, FourRowClient.FourRowServiceReference.IFourRowService {
+    public partial class FourRowServiceClient : System.ServiceModel.DuplexClientBase<FourRowClient.FourRowServiceReference.IFourRowService>, FourRowClient.FourRowServiceReference.IFourRowService {
         
-        public FourRowServiceClient() {
+        public FourRowServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public FourRowServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public FourRowServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public FourRowServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public FourRowServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public FourRowServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public FourRowServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public FourRowServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+        public FourRowServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void lala() {
-            base.Channel.lala();
+        public void clientConnected(string userName, string hashedPasswd) {
+            base.Channel.clientConnected(userName, hashedPasswd);
         }
         
-        public System.Threading.Tasks.Task lalaAsync() {
-            return base.Channel.lalaAsync();
+        public System.Threading.Tasks.Task clientConnectedAsync(string userName, string hashedPasswd) {
+            return base.Channel.clientConnectedAsync(userName, hashedPasswd);
+        }
+        
+        public void clientRegisterd(string userName, string hashedPasswd) {
+            base.Channel.clientRegisterd(userName, hashedPasswd);
+        }
+        
+        public System.Threading.Tasks.Task clientRegisterdAsync(string userName, string hashedPasswd) {
+            return base.Channel.clientRegisterdAsync(userName, hashedPasswd);
+        }
+        
+        public void clientDisconnected(string userName) {
+            base.Channel.clientDisconnected(userName);
+        }
+        
+        public System.Threading.Tasks.Task clientDisconnectedAsync(string userName) {
+            return base.Channel.clientDisconnectedAsync(userName);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<string> getClientsThatNotPlayNow() {
+            return base.Channel.getClientsThatNotPlayNow();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getClientsThatNotPlayNowAsync() {
+            return base.Channel.getClientsThatNotPlayNowAsync();
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<string> getAllUsersGamesHistory() {
+            return base.Channel.getAllUsersGamesHistory();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getAllUsersGamesHistoryAsync() {
+            return base.Channel.getAllUsersGamesHistoryAsync();
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<string> getAllUsersGamesHistoryOrderedByName() {
+            return base.Channel.getAllUsersGamesHistoryOrderedByName();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getAllUsersGamesHistoryOrderedByNameAsync() {
+            return base.Channel.getAllUsersGamesHistoryOrderedByNameAsync();
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<string> getAllUsersGamesHistoryOrderedByGames() {
+            return base.Channel.getAllUsersGamesHistoryOrderedByGames();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getAllUsersGamesHistoryOrderedByGamesAsync() {
+            return base.Channel.getAllUsersGamesHistoryOrderedByGamesAsync();
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<string> getAllUsersGamesHistoryOrderedByWins() {
+            return base.Channel.getAllUsersGamesHistoryOrderedByWins();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getAllUsersGamesHistoryOrderedByWinsAsync() {
+            return base.Channel.getAllUsersGamesHistoryOrderedByWinsAsync();
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<string> getAllUsersGamesHistoryOrderedByLoses() {
+            return base.Channel.getAllUsersGamesHistoryOrderedByLoses();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getAllUsersGamesHistoryOrderedByLosesAsync() {
+            return base.Channel.getAllUsersGamesHistoryOrderedByLosesAsync();
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<string> getAllUsersGamesHistoryOrderedByPoints() {
+            return base.Channel.getAllUsersGamesHistoryOrderedByPoints();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> getAllUsersGamesHistoryOrderedByPointsAsync() {
+            return base.Channel.getAllUsersGamesHistoryOrderedByPointsAsync();
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<string> allTheGamesThatPlayesSoFar() {
+            return base.Channel.allTheGamesThatPlayesSoFar();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> allTheGamesThatPlayesSoFarAsync() {
+            return base.Channel.allTheGamesThatPlayesSoFarAsync();
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<string> allTheGamesThatPlayesNow() {
+            return base.Channel.allTheGamesThatPlayesNow();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> allTheGamesThatPlayesNowAsync() {
+            return base.Channel.allTheGamesThatPlayesNowAsync();
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<string> allTheGamesBetweenTwoClients(string userName1, string userName2) {
+            return base.Channel.allTheGamesBetweenTwoClients(userName1, userName2);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> allTheGamesBetweenTwoClientsAsync(string userName1, string userName2) {
+            return base.Channel.allTheGamesBetweenTwoClientsAsync(userName1, userName2);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<string> allTheGamesOfSomeClient(string userName) {
+            return base.Channel.allTheGamesOfSomeClient(userName);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<string>> allTheGamesOfSomeClientAsync(string userName) {
+            return base.Channel.allTheGamesOfSomeClientAsync(userName);
+        }
+        
+        public bool clearUsers() {
+            return base.Channel.clearUsers();
+        }
+        
+        public System.Threading.Tasks.Task<bool> clearUsersAsync() {
+            return base.Channel.clearUsersAsync();
+        }
+        
+        public FourRowClient.FourRowServiceReference.MoveResult ReportMove(int RowLocation, int ColLocation, int player) {
+            return base.Channel.ReportMove(RowLocation, ColLocation, player);
+        }
+        
+        public System.Threading.Tasks.Task<FourRowClient.FourRowServiceReference.MoveResult> ReportMoveAsync(int RowLocation, int ColLocation, int player) {
+            return base.Channel.ReportMoveAsync(RowLocation, ColLocation, player);
+        }
+        
+        public bool ping() {
+            return base.Channel.ping();
+        }
+        
+        public System.Threading.Tasks.Task<bool> pingAsync() {
+            return base.Channel.pingAsync();
         }
     }
 }

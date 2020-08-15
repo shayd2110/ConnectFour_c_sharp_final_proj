@@ -14,10 +14,11 @@ namespace WcfFourRowService
     /// <summary>
     /// interface that represent all of the operations that service offer to clients
     /// </summary>
-    [ServiceContract(CallbackContract = typeof(IFourRowCallback))]
+    [ServiceContract(CallbackContract = typeof(IFourRowServiceCallback))]
     public interface IFourRowService
     {
         /*clientConnected method signature*/
+        [FaultContract(typeof(UserAlreadyConnectedFault))]
         [FaultContract(typeof(UserDoesntExistsFault))]
         [FaultContract(typeof(WrongPasswordFault))]
         [OperationContract]
@@ -35,7 +36,7 @@ namespace WcfFourRowService
 
         /*getClientsThatNotPlayNow method signature*/
         [OperationContract]
-        List<string> getClientsThatNotPlayNow();
+        IEnumerable<string> getClientsThatNotPlayNow();
 
         /*some methods signatures that connected to data base queries*/
         
@@ -104,10 +105,15 @@ namespace WcfFourRowService
 
         /*end of some methods signatures that connected to data base queries*/
 
+        [OperationContract]
+        [FaultContract(typeof(DbException))]
+        [FaultContract(typeof(Exception))]
+        bool clearUsers();
 
-        //[OperationContract]
-        //[FaultContract(typeof(OpponentDisconnectedFault))]
-        //MoveResult ReportMove(int location, int player);
+
+        [OperationContract]
+        [FaultContract(typeof(OpponentDisconnectedFault))]
+        MoveResult ReportMove(int RowLocation,int ColLocation, int player);
 
         /*ping method signature*/
         [OperationContract]
@@ -121,13 +127,13 @@ namespace WcfFourRowService
     /// <summary>
     /// interface that represent all of the operations that service can do throw clients
     /// </summary>
-    public interface IFourRowCallback
+    public interface IFourRowServiceCallback
     {
-        //[OperationContract(IsOneWay = true)]
-        //void OtherPlayerConnected();
+        [OperationContract(IsOneWay = true)]
+        void OtherPlayerConnected();
 
-        //[OperationContract(IsOneWay = true)]
-        //void OtherPlayerMoved(MoveResult moveResult, int location);
+        [OperationContract(IsOneWay = true)]
+        void OtherPlayerMoved(MoveResult moveResult, int location);
 
     }/*end of -IFourRowCallback- interface*/
 
