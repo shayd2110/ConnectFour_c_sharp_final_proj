@@ -48,15 +48,16 @@ namespace FourRowClient
             }
             catch (DbException dex)
             {
-                throw new FaultException<DbException>(dex);
+                MessageBox.Show(dex.Message);
             }
             catch (FaultException<UserExistsFault> fault)
             {
                 MessageBox.Show(fault.Detail.Details);
+                return;
             }
             catch (Exception ex)
             {
-                throw new FaultException<Exception>(ex);
+                MessageBox.Show(ex.Message);
             }
             this.Close();
 

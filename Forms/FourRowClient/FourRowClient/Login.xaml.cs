@@ -56,20 +56,44 @@ namespace FourRowClient
             {
                 client.clientConnected(userName, utils.HashValue(pass).ToString());
             }
-            catch (DbException dex)
+            catch (DbException ex)
             {
-                throw new FaultException<DbException>(dex);
+                MessageBox.Show(ex.Message);
             }
-            catch (FaultException<UserDoesntExistsFault> fault)
+            catch (FaultException<UserDoesntExistsFault> ex)
             {
-                MessageBox.Show(fault.Detail.Details);
+               MessageBox.Show(ex.Detail.Details);
+                tbPasswrd.Clear();
+                tbUsername.Clear();
+                return;
+            }
+            catch (FaultException<UserAlreadyConnectedFault> ex)
+            {
+                MessageBox.Show(ex.Detail.Details);
+                return;
             }
             catch (Exception ex)
             {
-                throw new FaultException<Exception>(ex);
+                MessageBox.Show(ex.Message);
             }
-            tbPasswrd.Clear();
-            tbUsername.Clear();
+            WaitingWindow waitingWindow = null;
+            try
+            {
+                WaitingWindow ww = new WaitingWindow();
+                ww.Username = userName;
+                ww.Client = client;
+                ww.Callback = callback;
+                ww.Title = "Wellcome " + userName;
+                waitingWindow = ww;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                client.clientDisconnected(userName);
+            }
+            this.Close();
+            waitingWindow.Show();
 
         }
         
@@ -130,7 +154,7 @@ namespace FourRowClient
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                throw;
+                return;
             }
         }
 
@@ -139,6 +163,42 @@ namespace FourRowClient
             InitializeComponent();
             Register R = new Register();
             R.Show();
+        }
+
+        private void disconnect_button_Click(object sender, RoutedEventArgs e)
+        {
+            ClientCallback callback = new ClientCallback();
+            FourRowServiceClient Client = new FourRowServiceClient(new InstanceContext(callback));
+            if (string.IsNullOrEmpty(tbUsername.Text))
+            {
+                MessageBox.Show("insert valid username to disconnet THIS BUTTON IS FOR DEBUG USAGE ONLY!!");
+            }
+            else
+            {
+                string userName = tbUsername.Text.Trim();
+                string password = tbPasswrd.Password.Trim();
+                try
+                {
+                    Client.clientDisconnected(userName);
+                }
+                catch (DbException ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+                catch (FaultException<UserDoesntExistsFault> ex)
+                {
+                    MessageBox.Show(ex.Detail.Details);
+                    tbPasswrd.Clear();
+                    tbUsername.Clear();
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                MessageBox.Show(userName + " disconnected successfully");
+            }
         }
     }/*end of -MainWindow- class*/
 

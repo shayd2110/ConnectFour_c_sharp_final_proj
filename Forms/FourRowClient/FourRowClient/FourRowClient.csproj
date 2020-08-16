@@ -57,9 +57,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ball.cs" />
     <Compile Include="ClientCallback.cs" />
+    <Compile Include="Connected Services\FourRowServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PlayersInfoWithSorting_Window.xaml.cs">
+      <DependentUpon>PlayersInfoWithSorting_Window.xaml</DependentUpon>
     </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
@@ -80,15 +89,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Connected Services\FourRowServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PlayersInfoWithSorting_Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Register.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -126,19 +134,19 @@
     <None Include="Connected Services\FourRowServiceReference\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\FourRowServiceReference\item11.xsd">
+    <None Include="Connected Services\FourRowServiceReference\item2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\FourRowServiceReference\item12.xsd">
+    <None Include="Connected Services\FourRowServiceReference\item3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\FourRowServiceReference\item13.xsd">
+    <None Include="Connected Services\FourRowServiceReference\item4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\FourRowServiceReference\item14.xsd">
+    <None Include="Connected Services\FourRowServiceReference\item5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\FourRowServiceReference\item15.xsd">
+    <None Include="Connected Services\FourRowServiceReference\item6.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">

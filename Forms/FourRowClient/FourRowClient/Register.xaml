@@ -4,19 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FourRowClient"
-        mc:Ignorable="d"
         Title="Register" Height="300" Width="300">
 	<Grid Name="mainGrid">
 		<StackPanel>
-			<Label Content="--------------------------------------------------------" FontSize="15" Foreground="DarkBlue" />
+			<Label Content="--------------------------------------------------------" FontSize="15"
+             Foreground="DarkBlue"/>
 			<Label Foreground="DarkBlue">Username:</Label>
-			<TextBox Margin="10" Name="tbUsername"/>
+			<TextBox Name="tbUsername" Margin="10"/>
 			<Label Foreground="DarkBlue">Password:</Label>
-			<PasswordBox  Name="tbPasswrd" Margin="10"/>
-			<Button Foreground="DarkBlue" Margin="50,10,50,10" Content="Register" Click="ButtonSubmit_Click"/>
-			<Label Content="--------------------------------------------------------" FontSize="15" Foreground="DarkBlue"/>
-
-
+			<PasswordBox Name="tbPasswrd" Margin="10"/>
+			<Button Click="ButtonSubmit_Click" Foreground="DarkBlue" Margin="50,10,50,10" Content="Register"/>
+			<Label Content="--------------------------------------------------------" FontSize="15"
+             Foreground="DarkBlue"/>
 		</StackPanel>
 	</Grid>
 </Window>

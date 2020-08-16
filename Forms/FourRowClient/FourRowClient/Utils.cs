@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FourRowClient.FourRowServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -10,6 +11,16 @@ namespace FourRowClient
 {
      public class Utils
     {
+        public FourRowServiceClient Client { get; internal set; }
+
+
+        public void pingServer()
+        {
+            TimeSpan receiveTimeout = this.Client.Endpoint.Binding.ReceiveTimeout;
+            this.Client.Endpoint.Binding.ReceiveTimeout = new TimeSpan(0, 0, 10);
+            this.Client.ping();
+            this.Client.Endpoint.Binding.ReceiveTimeout = receiveTimeout;
+        }
 
         public object HashValue(string password)
         {

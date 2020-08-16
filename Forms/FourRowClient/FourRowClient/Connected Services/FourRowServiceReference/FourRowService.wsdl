@@ -149,6 +149,29 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientConnected_DbExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientConnected_UserDoesntExistsFaultFault_Fault">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -173,6 +196,29 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientConnected_WrongPasswordFaultFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientConnected_ExceptionFault_Fault">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -241,7 +287,53 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientRegisterd_DbExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientRegisterd_UserExistsFaultFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientRegisterd_ExceptionFault_Fault">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -310,7 +402,421 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientDisconnected_OpponentDisconnectedFaultFault_Fault">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientDisconnected_ExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientDisconnected_UserAlreadyConnectedFaultFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientDisconnectedBeforeGame_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientDisconnectedBeforeGame_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientDisconnectedBeforeGame_ExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientDisconnectedThrowGame_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientDisconnectedThrowGame_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientDisconnectedThrowGame_DbExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clientDisconnectedThrowGame_ExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_wantToPlayWithClient_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_wantToPlayWithClient_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_wantToPlayWithClient_ExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_opponentAcceptToPlay_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_opponentAcceptToPlay_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_opponentAcceptToPlay_DbExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_opponentAcceptToPlay_ExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_opponentDeclineToPlay_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_opponentDeclineToPlay_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_opponentDeclineToPlay_ExceptionFault_Fault">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -449,6 +955,98 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_getAllUsersGamesHistory_ExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_GetAllUsersInDB_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_GetAllUsersInDB_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_GetAllUsersInDB_DbExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_GetAllUsersInDB_ExceptionFault_Fault">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -1299,6 +1897,328 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_reportMove_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_reportMove_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_reportMove_DbExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_reportMove_ExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_getMeBackToWaitingList_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_getMeBackToWaitingList_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_getMyPos_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_getMyPos_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_getMyPos_ExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_setMyPos_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_setMyPos_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_setMyPos_ExceptionFault_Fault">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_killTheGame_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_killTheGame_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_clearUsers_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -1391,75 +2311,6 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_ReportMove_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_ReportMove_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_ReportMove_OpponentDisconnectedFaultFault_Fault">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
-          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
   <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_ping_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -1506,7 +2357,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_OtherPlayerConnected_output_policy">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_OtherPlayerMoved_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -1529,7 +2380,122 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_OtherPlayerMoved_output_policy">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_NotifyOpponentChallenge_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_HeyOpponentDeclineToPlay_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_OpponentAcceptToPlayLetsStart_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_LetsStart_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_OpponentDisconnectedBeforeTheGame_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm" />
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex" />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IFourRowService_OpponentDisconnectedThrowGameYouWon_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -1555,12 +2521,12 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data.Common" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/WcfFourRowService" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data.Common" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Runtime.InteropServices" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Runtime.InteropServices" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IFourRowService_clientConnected_InputMessage">
@@ -1569,11 +2535,17 @@
   <wsdl:message name="IFourRowService_clientConnected_OutputMessage">
     <wsdl:part name="parameters" element="tns:clientConnectedResponse" />
   </wsdl:message>
+  <wsdl:message name="IFourRowService_clientConnected_DbExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q1:DbException" />
+  </wsdl:message>
   <wsdl:message name="IFourRowService_clientConnected_UserDoesntExistsFaultFault_FaultMessage">
-    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WcfFourRowService" name="detail" element="q1:UserDoesntExistsFault" />
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/WcfFourRowService" name="detail" element="q2:UserDoesntExistsFault" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_clientConnected_WrongPasswordFaultFault_FaultMessage">
-    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/WcfFourRowService" name="detail" element="q2:WrongPasswordFault" />
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WcfFourRowService" name="detail" element="q3:WrongPasswordFault" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_clientConnected_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/System" name="detail" element="q4:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_clientRegisterd_InputMessage">
     <wsdl:part name="parameters" element="tns:clientRegisterd" />
@@ -1581,8 +2553,14 @@
   <wsdl:message name="IFourRowService_clientRegisterd_OutputMessage">
     <wsdl:part name="parameters" element="tns:clientRegisterdResponse" />
   </wsdl:message>
+  <wsdl:message name="IFourRowService_clientRegisterd_DbExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q5:DbException" />
+  </wsdl:message>
   <wsdl:message name="IFourRowService_clientRegisterd_UserExistsFaultFault_FaultMessage">
-    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WcfFourRowService" name="detail" element="q3:UserExistsFault" />
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/WcfFourRowService" name="detail" element="q6:UserExistsFault" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_clientRegisterd_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/System" name="detail" element="q7:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_clientDisconnected_InputMessage">
     <wsdl:part name="parameters" element="tns:clientDisconnected" />
@@ -1590,8 +2568,62 @@
   <wsdl:message name="IFourRowService_clientDisconnected_OutputMessage">
     <wsdl:part name="parameters" element="tns:clientDisconnectedResponse" />
   </wsdl:message>
-  <wsdl:message name="IFourRowService_clientDisconnected_OpponentDisconnectedFaultFault_FaultMessage">
-    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/WcfFourRowService" name="detail" element="q4:OpponentDisconnectedFault" />
+  <wsdl:message name="IFourRowService_clientDisconnected_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/System" name="detail" element="q8:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_clientDisconnected_UserAlreadyConnectedFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/WcfFourRowService" name="detail" element="q9:UserAlreadyConnectedFault" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_clientDisconnectedBeforeGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:clientDisconnectedBeforeGame" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_clientDisconnectedBeforeGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:clientDisconnectedBeforeGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_clientDisconnectedBeforeGame_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/System" name="detail" element="q10:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_clientDisconnectedThrowGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:clientDisconnectedThrowGame" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_clientDisconnectedThrowGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:clientDisconnectedThrowGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_clientDisconnectedThrowGame_DbExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q11:DbException" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_clientDisconnectedThrowGame_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/System" name="detail" element="q12:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_wantToPlayWithClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:wantToPlayWithClient" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_wantToPlayWithClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:wantToPlayWithClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_wantToPlayWithClient_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/System" name="detail" element="q13:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_opponentAcceptToPlay_InputMessage">
+    <wsdl:part name="parameters" element="tns:opponentAcceptToPlay" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_opponentAcceptToPlay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:opponentAcceptToPlayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_opponentAcceptToPlay_DbExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q14:DbException" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_opponentAcceptToPlay_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/System" name="detail" element="q15:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_opponentDeclineToPlay_InputMessage">
+    <wsdl:part name="parameters" element="tns:opponentDeclineToPlay" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_opponentDeclineToPlay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:opponentDeclineToPlayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_opponentDeclineToPlay_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/System" name="detail" element="q16:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getClientsThatNotPlayNow_InputMessage">
     <wsdl:part name="parameters" element="tns:getClientsThatNotPlayNow" />
@@ -1606,10 +2638,22 @@
     <wsdl:part name="parameters" element="tns:getAllUsersGamesHistoryResponse" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistory_DbExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q5:DbException" />
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q17:DbException" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistory_ExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/System" name="detail" element="q6:Exception" />
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/System" name="detail" element="q18:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_GetAllUsersInDB_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersInDB" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_GetAllUsersInDB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersInDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_GetAllUsersInDB_DbExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q19:DbException" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_GetAllUsersInDB_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/System" name="detail" element="q20:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByName_InputMessage">
     <wsdl:part name="parameters" element="tns:getAllUsersGamesHistoryOrderedByName" />
@@ -1618,10 +2662,10 @@
     <wsdl:part name="parameters" element="tns:getAllUsersGamesHistoryOrderedByNameResponse" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByName_DbExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q7:DbException" />
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q21:DbException" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByName_ExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/System" name="detail" element="q8:Exception" />
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/System" name="detail" element="q22:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByGames_InputMessage">
     <wsdl:part name="parameters" element="tns:getAllUsersGamesHistoryOrderedByGames" />
@@ -1630,10 +2674,10 @@
     <wsdl:part name="parameters" element="tns:getAllUsersGamesHistoryOrderedByGamesResponse" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByGames_DbExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q9:DbException" />
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q23:DbException" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByGames_ExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/System" name="detail" element="q10:Exception" />
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/System" name="detail" element="q24:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByWins_InputMessage">
     <wsdl:part name="parameters" element="tns:getAllUsersGamesHistoryOrderedByWins" />
@@ -1642,10 +2686,10 @@
     <wsdl:part name="parameters" element="tns:getAllUsersGamesHistoryOrderedByWinsResponse" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByWins_DbExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q11:DbException" />
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q25:DbException" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByWins_ExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/System" name="detail" element="q12:Exception" />
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/System" name="detail" element="q26:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByLoses_InputMessage">
     <wsdl:part name="parameters" element="tns:getAllUsersGamesHistoryOrderedByLoses" />
@@ -1654,10 +2698,10 @@
     <wsdl:part name="parameters" element="tns:getAllUsersGamesHistoryOrderedByLosesResponse" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByLoses_DbExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q13:DbException" />
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q27:DbException" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByLoses_ExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/System" name="detail" element="q14:Exception" />
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/System" name="detail" element="q28:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByPoints_InputMessage">
     <wsdl:part name="parameters" element="tns:getAllUsersGamesHistoryOrderedByPoints" />
@@ -1666,10 +2710,10 @@
     <wsdl:part name="parameters" element="tns:getAllUsersGamesHistoryOrderedByPointsResponse" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByPoints_DbExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q15:DbException" />
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q29:DbException" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_getAllUsersGamesHistoryOrderedByPoints_ExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/System" name="detail" element="q16:Exception" />
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/System" name="detail" element="q30:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_allTheGamesThatPlayesSoFar_InputMessage">
     <wsdl:part name="parameters" element="tns:allTheGamesThatPlayesSoFar" />
@@ -1678,10 +2722,10 @@
     <wsdl:part name="parameters" element="tns:allTheGamesThatPlayesSoFarResponse" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_allTheGamesThatPlayesSoFar_DbExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q17:DbException" />
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q31:DbException" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_allTheGamesThatPlayesSoFar_ExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/System" name="detail" element="q18:Exception" />
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/System" name="detail" element="q32:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_allTheGamesThatPlayesNow_InputMessage">
     <wsdl:part name="parameters" element="tns:allTheGamesThatPlayesNow" />
@@ -1690,10 +2734,10 @@
     <wsdl:part name="parameters" element="tns:allTheGamesThatPlayesNowResponse" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_allTheGamesThatPlayesNow_DbExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q19:DbException" />
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q33:DbException" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_allTheGamesThatPlayesNow_ExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/System" name="detail" element="q20:Exception" />
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/System" name="detail" element="q34:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_allTheGamesBetweenTwoClients_InputMessage">
     <wsdl:part name="parameters" element="tns:allTheGamesBetweenTwoClients" />
@@ -1702,10 +2746,10 @@
     <wsdl:part name="parameters" element="tns:allTheGamesBetweenTwoClientsResponse" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_allTheGamesBetweenTwoClients_DbExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q21:DbException" />
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q35:DbException" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_allTheGamesBetweenTwoClients_ExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/System" name="detail" element="q22:Exception" />
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/System" name="detail" element="q36:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_allTheGamesOfSomeClient_InputMessage">
     <wsdl:part name="parameters" element="tns:allTheGamesOfSomeClient" />
@@ -1714,10 +2758,52 @@
     <wsdl:part name="parameters" element="tns:allTheGamesOfSomeClientResponse" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_allTheGamesOfSomeClient_DbExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q23:DbException" />
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q37:DbException" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_allTheGamesOfSomeClient_ExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/System" name="detail" element="q24:Exception" />
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/System" name="detail" element="q38:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_reportMove_InputMessage">
+    <wsdl:part name="parameters" element="tns:reportMove" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_reportMove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:reportMoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_reportMove_DbExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q39:DbException" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_reportMove_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/System" name="detail" element="q40:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_getMeBackToWaitingList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMeBackToWaitingList" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_getMeBackToWaitingList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMeBackToWaitingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_getMyPos_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMyPos" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_getMyPos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMyPosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_getMyPos_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/System" name="detail" element="q41:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_setMyPos_InputMessage">
+    <wsdl:part name="parameters" element="tns:setMyPos" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_setMyPos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setMyPosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_setMyPos_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/System" name="detail" element="q42:Exception" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_killTheGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:killTheGame" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_killTheGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:killTheGameResponse" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_clearUsers_InputMessage">
     <wsdl:part name="parameters" element="tns:clearUsers" />
@@ -1726,19 +2812,10 @@
     <wsdl:part name="parameters" element="tns:clearUsersResponse" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_clearUsers_DbExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q25:DbException" />
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/System.Data.Common" name="detail" element="q43:DbException" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_clearUsers_ExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/System" name="detail" element="q26:Exception" />
-  </wsdl:message>
-  <wsdl:message name="IFourRowService_ReportMove_InputMessage">
-    <wsdl:part name="parameters" element="tns:ReportMove" />
-  </wsdl:message>
-  <wsdl:message name="IFourRowService_ReportMove_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ReportMoveResponse" />
-  </wsdl:message>
-  <wsdl:message name="IFourRowService_ReportMove_OpponentDisconnectedFaultFault_FaultMessage">
-    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/WcfFourRowService" name="detail" element="q27:OpponentDisconnectedFault" />
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/System" name="detail" element="q44:Exception" />
   </wsdl:message>
   <wsdl:message name="IFourRowService_ping_InputMessage">
     <wsdl:part name="parameters" element="tns:ping" />
@@ -1746,28 +2823,75 @@
   <wsdl:message name="IFourRowService_ping_OutputMessage">
     <wsdl:part name="parameters" element="tns:pingResponse" />
   </wsdl:message>
-  <wsdl:message name="IFourRowService_OtherPlayerConnected_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:OtherPlayerConnected" />
-  </wsdl:message>
   <wsdl:message name="IFourRowService_OtherPlayerMoved_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:OtherPlayerMoved" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_NotifyOpponentChallenge_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyOpponentChallenge" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_HeyOpponentDeclineToPlay_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:HeyOpponentDeclineToPlay" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_OpponentAcceptToPlayLetsStart_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OpponentAcceptToPlayLetsStart" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_LetsStart_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:LetsStart" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_OpponentDisconnectedBeforeTheGame_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OpponentDisconnectedBeforeTheGame" />
+  </wsdl:message>
+  <wsdl:message name="IFourRowService_OpponentDisconnectedThrowGameYouWon_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OpponentDisconnectedThrowGameYouWon" />
   </wsdl:message>
   <wsdl:portType name="IFourRowService">
     <wsdl:operation name="clientConnected">
       <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/clientConnected" message="tns:IFourRowService_clientConnected_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/clientConnectedResponse" message="tns:IFourRowService_clientConnected_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientConnectedDbExceptionFault" name="DbExceptionFault" message="tns:IFourRowService_clientConnected_DbExceptionFault_FaultMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientConnectedUserDoesntExistsFaultFault" name="UserDoesntExistsFaultFault" message="tns:IFourRowService_clientConnected_UserDoesntExistsFaultFault_FaultMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientConnectedWrongPasswordFaultFault" name="WrongPasswordFaultFault" message="tns:IFourRowService_clientConnected_WrongPasswordFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientConnectedExceptionFault" name="ExceptionFault" message="tns:IFourRowService_clientConnected_ExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="clientRegisterd">
       <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/clientRegisterd" message="tns:IFourRowService_clientRegisterd_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/clientRegisterdResponse" message="tns:IFourRowService_clientRegisterd_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientRegisterdDbExceptionFault" name="DbExceptionFault" message="tns:IFourRowService_clientRegisterd_DbExceptionFault_FaultMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientRegisterdUserExistsFaultFault" name="UserExistsFaultFault" message="tns:IFourRowService_clientRegisterd_UserExistsFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientRegisterdExceptionFault" name="ExceptionFault" message="tns:IFourRowService_clientRegisterd_ExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="clientDisconnected">
       <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/clientDisconnected" message="tns:IFourRowService_clientDisconnected_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/clientDisconnectedResponse" message="tns:IFourRowService_clientDisconnected_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientDisconnectedOpponentDisconnectedFaultFault" name="OpponentDisconnectedFaultFault" message="tns:IFourRowService_clientDisconnected_OpponentDisconnectedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientDisconnectedExceptionFault" name="ExceptionFault" message="tns:IFourRowService_clientDisconnected_ExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientDisconnectedUserAlreadyConnectedFaultFault" name="UserAlreadyConnectedFaultFault" message="tns:IFourRowService_clientDisconnected_UserAlreadyConnectedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="clientDisconnectedBeforeGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/clientDisconnectedBeforeGame" message="tns:IFourRowService_clientDisconnectedBeforeGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/clientDisconnectedBeforeGameResponse" message="tns:IFourRowService_clientDisconnectedBeforeGame_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientDisconnectedBeforeGameExceptionFault" name="ExceptionFault" message="tns:IFourRowService_clientDisconnectedBeforeGame_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="clientDisconnectedThrowGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/clientDisconnectedThrowGame" message="tns:IFourRowService_clientDisconnectedThrowGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/clientDisconnectedThrowGameResponse" message="tns:IFourRowService_clientDisconnectedThrowGame_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientDisconnectedThrowGameDbExceptionFault" name="DbExceptionFault" message="tns:IFourRowService_clientDisconnectedThrowGame_DbExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clientDisconnectedThrowGameExceptionFault" name="ExceptionFault" message="tns:IFourRowService_clientDisconnectedThrowGame_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="wantToPlayWithClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/wantToPlayWithClient" message="tns:IFourRowService_wantToPlayWithClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/wantToPlayWithClientResponse" message="tns:IFourRowService_wantToPlayWithClient_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/wantToPlayWithClientExceptionFault" name="ExceptionFault" message="tns:IFourRowService_wantToPlayWithClient_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="opponentAcceptToPlay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/opponentAcceptToPlay" message="tns:IFourRowService_opponentAcceptToPlay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/opponentAcceptToPlayResponse" message="tns:IFourRowService_opponentAcceptToPlay_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/opponentAcceptToPlayDbExceptionFault" name="DbExceptionFault" message="tns:IFourRowService_opponentAcceptToPlay_DbExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/opponentAcceptToPlayExceptionFault" name="ExceptionFault" message="tns:IFourRowService_opponentAcceptToPlay_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="opponentDeclineToPlay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/opponentDeclineToPlay" message="tns:IFourRowService_opponentDeclineToPlay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/opponentDeclineToPlayResponse" message="tns:IFourRowService_opponentDeclineToPlay_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/opponentDeclineToPlayExceptionFault" name="ExceptionFault" message="tns:IFourRowService_opponentDeclineToPlay_ExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="getClientsThatNotPlayNow">
       <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/getClientsThatNotPlayNow" message="tns:IFourRowService_getClientsThatNotPlayNow_InputMessage" />
@@ -1778,6 +2902,12 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryResponse" message="tns:IFourRowService_getAllUsersGamesHistory_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryDbExceptionFault" name="DbExceptionFault" message="tns:IFourRowService_getAllUsersGamesHistory_DbExceptionFault_FaultMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryExceptionFault" name="ExceptionFault" message="tns:IFourRowService_getAllUsersGamesHistory_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersInDB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/GetAllUsersInDB" message="tns:IFourRowService_GetAllUsersInDB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/GetAllUsersInDBResponse" message="tns:IFourRowService_GetAllUsersInDB_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/GetAllUsersInDBDbExceptionFault" name="DbExceptionFault" message="tns:IFourRowService_GetAllUsersInDB_DbExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/GetAllUsersInDBExceptionFault" name="ExceptionFault" message="tns:IFourRowService_GetAllUsersInDB_ExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="getAllUsersGamesHistoryOrderedByName">
       <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/getAllUsersGamesHistoryOrderedByName" message="tns:IFourRowService_getAllUsersGamesHistoryOrderedByName_InputMessage" />
@@ -1833,26 +2963,60 @@
       <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/allTheGamesOfSomeClientDbExceptionFault" name="DbExceptionFault" message="tns:IFourRowService_allTheGamesOfSomeClient_DbExceptionFault_FaultMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/allTheGamesOfSomeClientExceptionFault" name="ExceptionFault" message="tns:IFourRowService_allTheGamesOfSomeClient_ExceptionFault_FaultMessage" />
     </wsdl:operation>
+    <wsdl:operation name="reportMove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/reportMove" message="tns:IFourRowService_reportMove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/reportMoveResponse" message="tns:IFourRowService_reportMove_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/reportMoveDbExceptionFault" name="DbExceptionFault" message="tns:IFourRowService_reportMove_DbExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/reportMoveExceptionFault" name="ExceptionFault" message="tns:IFourRowService_reportMove_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMeBackToWaitingList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/getMeBackToWaitingList" message="tns:IFourRowService_getMeBackToWaitingList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/getMeBackToWaitingListResponse" message="tns:IFourRowService_getMeBackToWaitingList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMyPos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/getMyPos" message="tns:IFourRowService_getMyPos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/getMyPosResponse" message="tns:IFourRowService_getMyPos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/getMyPosExceptionFault" name="ExceptionFault" message="tns:IFourRowService_getMyPos_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setMyPos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/setMyPos" message="tns:IFourRowService_setMyPos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/setMyPosResponse" message="tns:IFourRowService_setMyPos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/setMyPosExceptionFault" name="ExceptionFault" message="tns:IFourRowService_setMyPos_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="killTheGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/killTheGame" message="tns:IFourRowService_killTheGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/killTheGameResponse" message="tns:IFourRowService_killTheGame_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="clearUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/clearUsers" message="tns:IFourRowService_clearUsers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/clearUsersResponse" message="tns:IFourRowService_clearUsers_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clearUsersDbExceptionFault" name="DbExceptionFault" message="tns:IFourRowService_clearUsers_DbExceptionFault_FaultMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/clearUsersExceptionFault" name="ExceptionFault" message="tns:IFourRowService_clearUsers_ExceptionFault_FaultMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ReportMove">
-      <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/ReportMove" message="tns:IFourRowService_ReportMove_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/ReportMoveResponse" message="tns:IFourRowService_ReportMove_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IFourRowService/ReportMoveOpponentDisconnectedFaultFault" name="OpponentDisconnectedFaultFault" message="tns:IFourRowService_ReportMove_OpponentDisconnectedFaultFault_FaultMessage" />
-    </wsdl:operation>
     <wsdl:operation name="ping">
       <wsdl:input wsaw:Action="http://tempuri.org/IFourRowService/ping" message="tns:IFourRowService_ping_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/pingResponse" message="tns:IFourRowService_ping_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="OtherPlayerConnected">
-      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/OtherPlayerConnected" message="tns:IFourRowService_OtherPlayerConnected_OutputCallbackMessage" />
-    </wsdl:operation>
     <wsdl:operation name="OtherPlayerMoved">
       <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/OtherPlayerMoved" message="tns:IFourRowService_OtherPlayerMoved_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyOpponentChallenge">
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/NotifyOpponentChallenge" message="tns:IFourRowService_NotifyOpponentChallenge_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HeyOpponentDeclineToPlay">
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/HeyOpponentDeclineToPlay" message="tns:IFourRowService_HeyOpponentDeclineToPlay_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpponentAcceptToPlayLetsStart">
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/OpponentAcceptToPlayLetsStart" message="tns:IFourRowService_OpponentAcceptToPlayLetsStart_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LetsStart">
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/LetsStart" message="tns:IFourRowService_LetsStart_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpponentDisconnectedBeforeTheGame">
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/OpponentDisconnectedBeforeTheGame" message="tns:IFourRowService_OpponentDisconnectedBeforeTheGame_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpponentDisconnectedThrowGameYouWon">
+      <wsdl:output wsaw:Action="http://tempuri.org/IFourRowService/OpponentDisconnectedThrowGameYouWon" message="tns:IFourRowService_OpponentDisconnectedThrowGameYouWon_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSDualHttpBinding_IFourRowService" type="tns:IFourRowService">
@@ -1868,6 +3032,10 @@
         <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientConnected_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="DbExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientConnected_DbExceptionFault_Fault" />
+        <soap12:fault use="literal" name="DbExceptionFault" namespace="" />
+      </wsdl:fault>
       <wsdl:fault name="UserDoesntExistsFaultFault">
         <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientConnected_UserDoesntExistsFaultFault_Fault" />
         <soap12:fault use="literal" name="UserDoesntExistsFaultFault" namespace="" />
@@ -1875,6 +3043,10 @@
       <wsdl:fault name="WrongPasswordFaultFault">
         <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientConnected_WrongPasswordFaultFault_Fault" />
         <soap12:fault use="literal" name="WrongPasswordFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientConnected_ExceptionFault_Fault" />
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="clientRegisterd">
@@ -1887,9 +3059,17 @@
         <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientRegisterd_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="DbExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientRegisterd_DbExceptionFault_Fault" />
+        <soap12:fault use="literal" name="DbExceptionFault" namespace="" />
+      </wsdl:fault>
       <wsdl:fault name="UserExistsFaultFault">
         <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientRegisterd_UserExistsFaultFault_Fault" />
         <soap12:fault use="literal" name="UserExistsFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientRegisterd_ExceptionFault_Fault" />
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="clientDisconnected">
@@ -1902,9 +3082,96 @@
         <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientDisconnected_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="OpponentDisconnectedFaultFault">
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientDisconnected_OpponentDisconnectedFaultFault_Fault" />
-        <soap12:fault use="literal" name="OpponentDisconnectedFaultFault" namespace="" />
+      <wsdl:fault name="ExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientDisconnected_ExceptionFault_Fault" />
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UserAlreadyConnectedFaultFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientDisconnected_UserAlreadyConnectedFaultFault_Fault" />
+        <soap12:fault use="literal" name="UserAlreadyConnectedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clientDisconnectedBeforeGame">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/clientDisconnectedBeforeGame" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientDisconnectedBeforeGame_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientDisconnectedBeforeGame_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientDisconnectedBeforeGame_ExceptionFault_Fault" />
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clientDisconnectedThrowGame">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/clientDisconnectedThrowGame" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientDisconnectedThrowGame_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientDisconnectedThrowGame_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientDisconnectedThrowGame_DbExceptionFault_Fault" />
+        <soap12:fault use="literal" name="DbExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_clientDisconnectedThrowGame_ExceptionFault_Fault" />
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="wantToPlayWithClient">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/wantToPlayWithClient" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_wantToPlayWithClient_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_wantToPlayWithClient_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_wantToPlayWithClient_ExceptionFault_Fault" />
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="opponentAcceptToPlay">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/opponentAcceptToPlay" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_opponentAcceptToPlay_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_opponentAcceptToPlay_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_opponentAcceptToPlay_DbExceptionFault_Fault" />
+        <soap12:fault use="literal" name="DbExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_opponentAcceptToPlay_ExceptionFault_Fault" />
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="opponentDeclineToPlay">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/opponentDeclineToPlay" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_opponentDeclineToPlay_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_opponentDeclineToPlay_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_opponentDeclineToPlay_ExceptionFault_Fault" />
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="getClientsThatNotPlayNow">
@@ -1934,6 +3201,25 @@
       </wsdl:fault>
       <wsdl:fault name="ExceptionFault">
         <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_getAllUsersGamesHistory_ExceptionFault_Fault" />
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersInDB">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/GetAllUsersInDB" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_GetAllUsersInDB_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_GetAllUsersInDB_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_GetAllUsersInDB_DbExceptionFault_Fault" />
+        <soap12:fault use="literal" name="DbExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_GetAllUsersInDB_ExceptionFault_Fault" />
         <soap12:fault use="literal" name="ExceptionFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
@@ -2108,6 +3394,77 @@
         <soap12:fault use="literal" name="ExceptionFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="reportMove">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/reportMove" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_reportMove_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_reportMove_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_reportMove_DbExceptionFault_Fault" />
+        <soap12:fault use="literal" name="DbExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_reportMove_ExceptionFault_Fault" />
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMeBackToWaitingList">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/getMeBackToWaitingList" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_getMeBackToWaitingList_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_getMeBackToWaitingList_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMyPos">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/getMyPos" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_getMyPos_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_getMyPos_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_getMyPos_ExceptionFault_Fault" />
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setMyPos">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/setMyPos" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_setMyPos_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_setMyPos_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_setMyPos_ExceptionFault_Fault" />
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="killTheGame">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/killTheGame" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_killTheGame_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_killTheGame_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="clearUsers">
       <soap12:operation soapAction="http://tempuri.org/IFourRowService/clearUsers" style="document" />
       <wsdl:input>
@@ -2127,21 +3484,6 @@
         <soap12:fault use="literal" name="ExceptionFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
-    <wsdl:operation name="ReportMove">
-      <soap12:operation soapAction="http://tempuri.org/IFourRowService/ReportMove" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_ReportMove_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_ReportMove_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-      <wsdl:fault name="OpponentDisconnectedFaultFault">
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_ReportMove_OpponentDisconnectedFaultFault_Fault" />
-        <soap12:fault use="literal" name="OpponentDisconnectedFaultFault" namespace="" />
-      </wsdl:fault>
-    </wsdl:operation>
     <wsdl:operation name="ping">
       <soap12:operation soapAction="http://tempuri.org/IFourRowService/ping" style="document" />
       <wsdl:input>
@@ -2153,17 +3495,52 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="OtherPlayerConnected">
-      <soap12:operation soapAction="http://tempuri.org/IFourRowService/OtherPlayerConnected" style="document" />
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_OtherPlayerConnected_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="OtherPlayerMoved">
       <soap12:operation soapAction="http://tempuri.org/IFourRowService/OtherPlayerMoved" style="document" />
       <wsdl:output>
         <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_OtherPlayerMoved_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyOpponentChallenge">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/NotifyOpponentChallenge" style="document" />
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_NotifyOpponentChallenge_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HeyOpponentDeclineToPlay">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/HeyOpponentDeclineToPlay" style="document" />
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_HeyOpponentDeclineToPlay_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpponentAcceptToPlayLetsStart">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/OpponentAcceptToPlayLetsStart" style="document" />
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_OpponentAcceptToPlayLetsStart_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LetsStart">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/LetsStart" style="document" />
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_LetsStart_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpponentDisconnectedBeforeTheGame">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/OpponentDisconnectedBeforeTheGame" style="document" />
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_OpponentDisconnectedBeforeTheGame_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpponentDisconnectedThrowGameYouWon">
+      <soap12:operation soapAction="http://tempuri.org/IFourRowService/OpponentDisconnectedThrowGameYouWon" style="document" />
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IFourRowService_OpponentDisconnectedThrowGameYouWon_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
