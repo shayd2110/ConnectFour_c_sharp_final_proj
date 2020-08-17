@@ -1,28 +1,18 @@
-﻿using FourRowClient.FourRowServiceReference;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data.Common;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using FourRowClient.FourRowServiceReference;
 
 namespace FourRowClient
 {
     /// <summary>
-    /// Interaction logic for Register.xaml
+    ///     Interaction logic for Register.xaml
     /// </summary>
-    public partial class Register : Window
+    public partial class Register
     {
-        Utils utils;
+        private readonly Utils utils;
+
         public Register()
         {
             InitializeComponent();
@@ -31,24 +21,24 @@ namespace FourRowClient
 
         private void ButtonSubmit_Click(object sender, RoutedEventArgs e)
         {
-            if (!utils.AllTextboxesFilled(mainGrid))
+            if (!utils.AllTextboxesFilled(MainGrid))
             {
                 MessageBox.Show("Please insert User name and Password");
                 return;
             }
-            ClientCallback callback = new ClientCallback();
-            FourRowServiceClient client = new FourRowServiceClient(new InstanceContext(callback));
-            string userName = tbUsername.Text.Trim();
-            string pass = tbPasswrd.Password.Trim();
+
+            var callback = new ClientCallback();
+            var client = new FourRowServiceClient(new InstanceContext(callback));
+            var userName = TbUsername.Text.Trim();
+            var pass = TbPasswrd.Password.Trim();
 
             try
             {
-
-                client.clientRegisterd(userName, utils.HashValue(pass).ToString());
+                client.ClientRegistered(userName, utils.HashValue(pass).ToString());
             }
             catch (DbException dex)
             {
-                throw new FaultException<DbException>(dex);
+                MessageBox.Show(dex.Message);
             }
             catch (FaultException<UserExistsFault> fault)
             {
@@ -57,10 +47,10 @@ namespace FourRowClient
             }
             catch (Exception ex)
             {
-                throw new FaultException<Exception>(ex);
+                MessageBox.Show(ex.Message);
             }
-            this.Close();
 
+            Close();
         }
     }
 }

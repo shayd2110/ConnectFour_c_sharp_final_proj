@@ -11,16 +11,13 @@ namespace WcfFourRowService
     [DataContract]
     public enum MoveResult
     {
-        [EnumMember]
-        YouWon,
-        [EnumMember]
-        YouLose,
-        [EnumMember]
-        Draw,
-        [EnumMember]
-        NotYourTurn,
-        [EnumMember]
-        GameOn
+        [EnumMember] YouWon,
+        [EnumMember] YouLose,
+        [EnumMember] Draw,
+        [EnumMember] NotYourTurn,
+        [EnumMember] GameOn,
+        [EnumMember] Nothing,
+        [EnumMember] IllegalMove,
 
     }/*end of -MoveResult- enum*/
 

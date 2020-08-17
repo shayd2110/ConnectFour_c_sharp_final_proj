@@ -22,9 +22,9 @@ namespace WcfFourRowService
         /*ToString method*/
         public override string ToString()
         {
-            return $"{UserName}: #games: {NumberOfGames.ToString()}, " +
-                  $"#wins: {NumberOfWinnings.ToString()}, #loses: {NumberOfLoses.ToString()}, " +
-                  $"#points: {NumberOfPoints.ToString()}";
+            return $"{UserName}: •games: {NumberOfGames}, " +
+                  $"•wins: {NumberOfWinnings}, •loses: {NumberOfLoses}, " +
+                  $"•points: {NumberOfPoints}";
 
         }/*end of -ToString- method*/
 

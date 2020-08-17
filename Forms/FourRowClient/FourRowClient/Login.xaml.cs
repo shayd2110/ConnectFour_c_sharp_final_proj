@@ -1,22 +1,8 @@
-﻿using FourRowClient.FourRowServiceReference;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data.Common;
-using System.Linq;
-using System.Security.Cryptography;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using FourRowClient.FourRowServiceReference;
 
 
 /*FourRowClient namespace*/
@@ -24,70 +10,81 @@ namespace FourRowClient
 {
     /*MainWindow class*/
     /// <summary>
-    /// login/register window
+    ///     login/register window
     /// </summary>
-    public partial class Login : Window
+    public partial class Login 
     {
-        private DoubleAnimation da = new DoubleAnimation();
-        private Utils utils;
+
+
+        private readonly Utils utils;
+
         /*constructor*/
         public Login()
         {
             InitializeComponent();
             utils = new Utils();
-
-
-
-        }/*end of constructor*/
+        } /*end of constructor*/
 
         private void Button_Connect_Click(object sender, RoutedEventArgs e)
         {
-            ClientCallback callback = new ClientCallback();
-            FourRowServiceClient client = new FourRowServiceClient(new InstanceContext(callback));
-            if (!utils.AllTextboxesFilled(mainGrid))
+            var callback = new ClientCallback();
+            var client = new FourRowServiceClient(new InstanceContext(callback));
+            if (!utils.AllTextboxesFilled(MainGrid))
             {
                 MessageBox.Show("Please insert User name and Password");
                 return;
             }
-            string userName = tbUsername.Text.Trim();
-            string pass = tbPasswrd.Password.Trim();
+
+            var userName = TbUsername.Text.Trim();
+            var pass = TbPasswrd.Password.Trim();
 
             try
             {
-                client.clientConnected(userName, utils.HashValue(pass).ToString());
+                client.ClientConnected(userName, utils.HashValue(pass).ToString());
             }
-            catch (DbException dex)
+            catch (DbException ex)
             {
-                throw new FaultException<DbException>(dex);
+                MessageBox.Show(ex.Message);
             }
-            catch (FaultException<UserDoesntExistsFault> fault)
+            catch (FaultException<UserDoesntExistsFault> ex)
             {
-                MessageBox.Show(fault.Detail.Details);
-                tbPasswrd.Clear();
-                tbUsername.Clear();
+                MessageBox.Show(ex.Detail.Details);
+                TbPasswrd.Clear();
+                TbUsername.Clear();
                 return;
             }
-            catch (FaultException<UserAlreadyConnectedFault> fault)
+            catch (FaultException<UserAlreadyConnectedFault> ex)
             {
-                MessageBox.Show(fault.Detail.Details);
-                tbPasswrd.Clear();
-                tbUsername.Clear();
+                MessageBox.Show(ex.Detail.Details);
                 return;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-               // throw new FaultException<Exception>(ex);
             }
 
+            WaitingWindow waitingWindow = null;
+            try
+            {
+                var ww = new WaitingWindow
+                {
+                    Username = userName,
+                    Client = client,
+                    Callback = callback,
+                    Title = "Wellcome " + userName
+                };
+                waitingWindow = ww;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                client.ClientDisconnected(userName);
+            }
 
-            WaitingWindow ww = new WaitingWindow();
-            ww.Username = userName;
-            ww.Client = client;
-            this.Close();
-            ww.Show();
+            Close();
+            waitingWindow?.Show();
         }
-        
+
 
         //private void Button_Register_Click(object sender, RoutedEventArgs e)
         //{
@@ -110,7 +107,7 @@ namespace FourRowClient
 
         //    try
         //    {
-               
+
         //        client.clientRegisterd(userName, HashValue(pass).ToString());
         //    }
         //    catch (Exception ex)
@@ -132,29 +129,61 @@ namespace FourRowClient
 
         //}
 
-        
 
         private void ClearUsers_Click(object sender, RoutedEventArgs e)
         {
-            ClientCallback callback = new ClientCallback();
-            FourRowServiceClient client = new FourRowServiceClient(new InstanceContext(callback));
+            var callback = new ClientCallback();
+            var client = new FourRowServiceClient(new InstanceContext(callback));
             try
             {
-                client.clearUsers();
+                client.ClearUsers();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                throw;
             }
         }
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
         {
             InitializeComponent();
-            Register R = new Register();
-            R.Show();
+            var r = new Register();
+            r.Show();
         }
-    }/*end of -MainWindow- class*/
 
-}/*end of -FourRowClient- namespace*/
+        private void Disconnect_button_Click(object sender, RoutedEventArgs e)
+        {
+            var callback = new ClientCallback();
+            var client = new FourRowServiceClient(new InstanceContext(callback));
+            if (string.IsNullOrEmpty(TbUsername.Text))
+            {
+                MessageBox.Show("insert valid username to disconnet THIS BUTTON IS FOR DEBUG USAGE ONLY!!");
+            }
+            else
+            {
+                var userName = TbUsername.Text.Trim();
+                try
+                {
+                    client.ClientDisconnected(userName);
+                }
+                catch (DbException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (FaultException<UserDoesntExistsFault> ex)
+                {
+                    MessageBox.Show(ex.Detail.Details);
+                    TbPasswrd.Clear();
+                    TbUsername.Clear();
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                MessageBox.Show(userName + " disconnected successfully");
+            }
+        }
+    } /*end of -MainWindow- class*/
+} /*end of -FourRowClient- namespace*/

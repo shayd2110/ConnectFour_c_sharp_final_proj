@@ -1,22 +1,62 @@
-﻿using FourRowClient.FourRowServiceReference;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.ServiceModel;
+using System.Windows;
+using FourRowClient.FourRowServiceReference;
 
-namespace FourRowClient 
+namespace FourRowClient
 {
+    [CallbackBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class ClientCallback : IFourRowServiceCallback
     {
-        public void OtherPlayerConnected()
+        internal Action<string> answer2Challenge;
+        internal Action<string> endGame;
+        internal Action okGoBackToLife;
+        internal Action opponentDecline;
+        internal Action opponentQuitted;
+        internal Action startGameChoosedGuy;
+        internal Action startGameOpponent;
+        internal Action<int, double, double> updateGame;
+
+        public void HeyOpponentDeclineToPlay()
         {
-            throw new NotImplementedException();
+            opponentDecline();
         }
 
-        public void OtherPlayerMoved(MoveResult moveResult, int location)
+        public void LetsStart()
         {
-            throw new NotImplementedException();
+            startGameOpponent();
         }
+
+        public void NotifyOpponentChallenge(string currentPlayer)
+        {
+            answer2Challenge(currentPlayer);
+        }
+
+        public void OpponentAcceptToPlayLetsStart()
+        {
+            startGameChoosedGuy();
+        }
+
+        public void OpponentDisconnectedBeforeTheGame()
+        {
+            MessageBox.Show(" You opponent is disconnected\n    please cancel the thing\n please press - yes/no - ");
+            okGoBackToLife();
+        }
+
+        public void OpponentDisconnectedThrowGameYouWon()
+        {
+            opponentQuitted();
+        }
+
+        public void OtherPlayerMoved(Tuple<MoveResult, int> moveResult, double pointX, double pointY)
+        {
+            updateGame(moveResult.Item2, pointX, pointY);
+            if (moveResult.Item1 == MoveResult.Draw)
+                endGame("draw");
+            if (moveResult.Item1 != MoveResult.YouWon)
+                return;
+            endGame("you lost");
+        }
+
     }
 }

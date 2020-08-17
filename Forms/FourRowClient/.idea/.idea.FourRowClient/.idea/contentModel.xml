@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\שי דורון\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\שי דורון\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_FourRowClient.868910339.00" t="ExcludeRecursive" />
+    <e p="C:\Users\שי דורון\source\repos\C#_final_proj\ConnectFour_c_sharp_final_proj\Forms\FourRowClient" t="IncludeFlat">
+      <e p="FourRowClient" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ClientCallback.cs" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\configuration.svcinfo" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\configuration91.svcinfo" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\FourRowClient.FourRowServiceReference.MoveResult.datasource" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\FourRowService.wsdl" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\item.disco" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\item.xsd" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\item1.xsd" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\item11.xsd" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\item12.xsd" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\item13.xsd" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\item14.xsd" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\item15.xsd" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\Reference.cs" t="Include" />
+        <e p="Connected Services\FourRowServiceReference\Reference.svcmap" t="Include" />
+        <e p="FourRowClient.csproj" t="IncludeRecursive" />
+        <e p="GameWindow.xaml" t="Include" />
+        <e p="GameWindow.xaml.cs" t="Include" />
+        <e p="Login.xaml" t="Include" />
+        <e p="Login.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="App.g.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="Register.xaml" t="Include" />
+        <e p="Register.xaml.cs" t="Include" />
+        <e p="Utils.cs" t="Include" />
+        <e p="WaitingWindow.xaml" t="Include" />
+        <e p="WaitingWindow.xaml.cs" t="Include" />
+      </e>
+      <e p="FourRowClient.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
