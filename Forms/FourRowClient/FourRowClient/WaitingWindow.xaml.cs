@@ -1,32 +1,32 @@
-﻿using FourRowClient.FourRowServiceReference;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data.Common;
 using System.Linq;
 using System.ServiceModel;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
+using FourRowClient.FourRowServiceReference;
 
 namespace FourRowClient
 {
     /// <summary>
-    /// Interaction logic for WaitingWindow.xaml
+    ///     Interaction logic for WaitingWindow.xaml
     /// </summary>
-    public partial class WaitingWindow : Window
+    public partial class WaitingWindow 
     {
-        private DispatcherTimer timer = new DispatcherTimer();
-        public Utils utils = new Utils();
-        private string Opponent = (string)null;
+        private string opponent;
+        private readonly DispatcherTimer timer;
+        public Utils utils;
+
+        public WaitingWindow()
+        {
+            utils = new Utils();
+            timer = new DispatcherTimer();
+            opponent = null;
+            InitializeComponent();
+            utils.Client = Client;
+        }
 
         public FourRowServiceClient Client { get; internal set; }
 
@@ -34,30 +34,25 @@ namespace FourRowClient
 
         public ClientCallback Callback { get; internal set; }
 
-        public WaitingWindow()
-        {
-            InitializeComponent();
-            utils.Client = Client;
-        }
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            tbHeader.Text = "Connect 4 Game waiting room\nplease choose player to invite, or click one of the search buttons";
+            TbHeader.Text =
+                "Connect 4 Game waiting room\nplease choose player to invite, or click one of the search buttons";
             try
             {
                 timer.Interval = TimeSpan.FromSeconds(5.0);
-                timer.Tick += (EventHandler)((_param1, _param2) => UpdateConnectedPlayers());
+                timer.Tick += (EventHandler) ((param1, param2) => UpdateConnectedPlayers());
                 timer.Start();
                 utils.Client = Client;
-                Callback.answer2Challenge += new Action<string>(answer2Challenge);
-                Callback.opponentDecline += new Action(OpponentDecline);
-                Callback.startGameChoosedGuy += new Action(StartGame4Me);
-                Callback.startGameOpponent += new Action(StartGame4Opponent);
-                Callback.okGoBackToLife += new Action(GoBackToLife);
+                Callback.answer2Challenge += Answer2Challenge;
+                Callback.opponentDecline += OpponentDecline;
+                Callback.startGameChoosedGuy += StartGame4Me;
+                Callback.startGameOpponent += StartGame4Opponent;
+                Callback.okGoBackToLife += GoBackToLife;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
         }
 
@@ -66,18 +61,20 @@ namespace FourRowClient
             try
             {
                 timer.Stop();
-                utils.pingServer();
-                if (Opponent == null)
-                    Client.clientDisconnected(Username);
+                utils.PingServer();
+                if (opponent == null)
+                    Client.ClientDisconnected(Username);
                 else
-                    Client.clientDisconnectedBeforeGame(Username, Opponent, Username);
+                    Client.ClientDisconnectedBeforeGame(Username, opponent, Username);
             }
-            catch (FaultException<Exception> ex)
+            catch (FaultException<Exception> )
             {
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                // ignored
             }
+
             Environment.Exit(Environment.ExitCode);
         }
 
@@ -85,9 +82,9 @@ namespace FourRowClient
         {
             try
             {
-                List<string> userlList = Client.getClientsThatNotPlayNow().ToList();
+                var userlList = Client.GetClientsThatNotPlayNow().ToList();
                 userlList.Remove(Username);
-                lbUsers.ItemsSource = userlList.Count == 0 ? null : userlList;
+                LbUsers.ItemsSource = userlList.Count == 0 ? null : userlList;
             }
             catch (Exception ex)
             {
@@ -98,37 +95,37 @@ namespace FourRowClient
 
         private void AllRegisterdButton_Click(object sender, RoutedEventArgs e)
         {
-            AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = false;
+            AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled =
+                TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = false;
             try
             {
-                utils.pingServer();
-                List<string> allUsersInDb = Client.GetAllUsersInDB();
-                string res2Show = $"There is {allUsersInDb.Count} registerd players in the system \n";
-                int i = 0;
+                utils.PingServer();
+                var allUsersInDb = Client.GetAllUsersInDb();
+                var res2Show = $"There is {allUsersInDb.Count} registered players in the system \n";
+                var i = 0;
                 if (allUsersInDb.Count == 0)
                 {
                     MessageBox.Show("there is no users now");
                 }
                 else
                 {
-                    foreach (string str in allUsersInDb)
-                    {
+                    foreach (var _ in allUsersInDb)
                         if (i == 0)
                             ++i;
                         else
                             res2Show += allUsersInDb[i++] + "\n";
-                    }
                     MessageBox.Show(res2Show);
-                    AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
+                    AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled =
+                        TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
                 }
             }
             catch (FaultException<DbException> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (FaultException<Exception> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (TimeoutException ex)
             {
@@ -136,38 +133,40 @@ namespace FourRowClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
         }
 
         private void AllHistoryButton_Click(object sender, RoutedEventArgs e)
         {
-            AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = false;
+            AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled =
+                TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = false;
             try
             {
-                utils.pingServer();
-                List<string> gameList = Client.allTheGamesThatPlayesSoFar();
-                string res2Show = "\n";
-                int i = 0;
+                utils.PingServer();
+                var gameList = Client.AllTheGamesThatPlayesSoFar();
+                var res2Show = "\n";
+                var i = 0;
                 if (gameList.Count == 0)
                 {
                     MessageBox.Show("there is no games that played now");
                 }
                 else
                 {
-                    foreach (string str in gameList)
+                    foreach (var _ in gameList)
                         res2Show += gameList[i++] + "\n";
                     MessageBox.Show(res2Show);
-                    AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
+                    AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled =
+                        TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
                 }
             }
             catch (FaultException<DbException> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (FaultException<Exception> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (TimeoutException ex)
             {
@@ -175,38 +174,40 @@ namespace FourRowClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
         }
 
-        private void AllLiveButton_Click(object sender, RoutedEventArgs e)
+        private void AllLiveGamesButton_Click(object sender, RoutedEventArgs e)
         {
-            AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = false;
+            AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled =
+                TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = false;
             try
             {
-                utils.pingServer();
-                List<string> liveGamesList = Client.allTheGamesThatPlayesNow();
-                string res2Show = "\n";
-                int i = 0;
+                utils.PingServer();
+                var liveGamesList = Client.AllTheGamesThatPlayesNow();
+                var res2Show = "\n";
+                var i = 0;
                 if (liveGamesList.Count == 0)
                 {
                     MessageBox.Show("there is no games that played now");
                 }
                 else
                 {
-                    foreach (string str in liveGamesList)
-                        res2Show +=  liveGamesList[i++] + "\n";
+                    foreach (var _ in liveGamesList)
+                        res2Show += liveGamesList[i++] + "\n";
                     MessageBox.Show(res2Show);
-                    AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
+                    AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled =
+                        TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
                 }
             }
             catch (FaultException<DbException> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (FaultException<Exception> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (TimeoutException ex)
             {
@@ -214,41 +215,44 @@ namespace FourRowClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
         }
 
-        private void PlayersGamesSumButton_Click(object sender, RoutedEventArgs e) => new PlayersInfoWithSorting_Window()
+        private void PlayersGamesSumButton_Click(object sender, RoutedEventArgs e)
         {
-            Client = Client
-        }.Show();
+            new PlayersInfoWithSortingWindow
+            {
+                Client = Client
+            }.Show();
+        }
 
         private void AllUsersInDB_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                utils.pingServer();
-                List<string> allUsersInDb = Client.GetAllUsersInDB();
-                string res2Show = "\n";
-                int i = 0;
+                utils.PingServer();
+                var allUsersInDb = Client.GetAllUsersInDb();
+                var res2Show = "\n";
+                var i = 0;
                 if (allUsersInDb.Count == 0)
                 {
                     MessageBox.Show("there is no users in DB");
                 }
                 else
                 {
-                    foreach (string str in allUsersInDb)
+                    foreach (var _ in allUsersInDb)
                         res2Show += allUsersInDb[i++] + "\n";
                     MessageBox.Show(res2Show);
                 }
             }
             catch (FaultException<DbException> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (FaultException<Exception> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (TimeoutException ex)
             {
@@ -256,93 +260,94 @@ namespace FourRowClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
         }
 
         private void Challenge_button_Click(object sender, RoutedEventArgs e)
         {
-            AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = false;
+            AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled =
+                TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = false;
             try
             {
                 timer.Stop();
-                Opponent = lbUsers.SelectedItem as string;
-                Challenge_button.IsEnabled = false;
-                lbUsers.IsEnabled = false;
-                MessageBox.Show("request sent to " + Opponent + " \n wait for an answer ", "notice", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                utils.pingServer();
-                Client.wantToPlayWithClient(Username, Opponent);
+                opponent = LbUsers.SelectedItem as string;
+                ChallengeButton.IsEnabled = false;
+                LbUsers.IsEnabled = false;
+                MessageBox.Show("request sent to " + opponent + " \n wait for an answer ", "notice",
+                    MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                utils.PingServer();
+                Client.WantToPlayWithClient(Username, opponent);
             }
             catch (FaultException<Exception> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
-                AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
+                AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled =
+                    TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
             }
             catch (TimeoutException ex)
             {
                 MessageBox.Show("server is disconnected...\n" + ex.Message);
-                AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
+                AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled =
+                    TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
                 timer.Stop();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
-                AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
+                AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled =
+                    TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
             }
         }
 
+#pragma warning disable IDE1006 // Naming Styles
         private void lbUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+#pragma warning restore IDE1006 // Naming Styles
         {
-            switch (lbUsers.SelectedItems.Count)
+            switch (LbUsers.SelectedItems.Count)
             {
                 case 1:
                     PlayersGamesSumButton.IsEnabled = true;
-                    Challenge_button.IsEnabled = true;
+                    ChallengeButton.IsEnabled = true;
                     TowPlayersGameButton.IsEnabled = false;
                     break;
                 case 2:
                     TowPlayersGameButton.IsEnabled = true;
                     PlayersGamesSumButton.IsEnabled = false;
-                    Challenge_button.IsEnabled = false;
+                    ChallengeButton.IsEnabled = false;
                     break;
                 default:
                     PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = false;
                     break;
             }
+
             try
             {
-                if (lbUsers.SelectedItem == null || lbUsers.SelectedItems.Count > 1)
+                if (LbUsers.SelectedItem == null || LbUsers.SelectedItems.Count > 1)
                 {
-                    tbInfo.Clear();
+                    TbInfo.Clear();
                 }
                 else
                 {
                     timer.Stop();
-                    string selectedItem = lbUsers.SelectedItem as string;
-                    utils.pingServer();
-                    List<string> clientInfoList = Client.allTheGamesOfSomeClient(selectedItem);
+                    var selectedItem = LbUsers.SelectedItem as string;
+                    utils.PingServer();
+                    var clientInfoList = Client.AllTheGamesOfSomeClient(selectedItem);
                     if (clientInfoList.Count == 0)
-                    {
-                        tbInfo.Text = selectedItem + " has not played yet";
-                    }
+                        TbInfo.Text = selectedItem + " has not played yet";
                     else
-                    {
-                        foreach (string str in clientInfoList)
-                        {
-                           
-                            tbInfo.Text += str + "\n";
-                        }
-                    }
+                        foreach (var str in clientInfoList)
+                            TbInfo.Text += str + "\n";
                     timer.Start();
                 }
             }
             catch (FaultException<DbException> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (FaultException<Exception> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (TimeoutException ex)
             {
@@ -351,7 +356,7 @@ namespace FourRowClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
         }
 
@@ -359,51 +364,53 @@ namespace FourRowClient
         {
             try
             {
-                if (lbUsers.SelectedItem == null || lbUsers.SelectedItems.Count != 2)
+                if (LbUsers.SelectedItem == null || LbUsers.SelectedItems.Count != 2)
                     return;
-                string[] playersNames = new string[2];
-                int index = 0;
-                foreach (var selectedItem in lbUsers.SelectedItems)
+                var playersNames = new string[2];
+                var index = 0;
+                foreach (var selectedItem in LbUsers.SelectedItems)
                 {
                     playersNames[index] = selectedItem as string;
                     ++index;
                 }
-                utils.pingServer();
-                List<string> gamesBetweenPlayers = Client.allTheGamesBetweenTwoClients(playersNames[0], playersNames[1]);
-                string res2Show = "\n";
-                int num1 = 0;
+
+                utils.PingServer();
+                var gamesBetweenPlayers = Client.AllTheGamesBetweenTwoClients(playersNames[0], playersNames[1]);
+                var res2Show = "\n";
+                var num1 = 0;
                 if (gamesBetweenPlayers.Count == 0)
                 {
                     MessageBox.Show(" there was no games yet between " + playersNames[0] + " and " + playersNames[1]);
                 }
                 else
                 {
-                    foreach (string str in gamesBetweenPlayers)
+                    foreach (var _ in gamesBetweenPlayers)
                         res2Show += gamesBetweenPlayers[num1++] + "\n";
                     MessageBox.Show(res2Show);
                 }
             }
             catch (FaultException<DbException> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (FaultException<Exception> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (TimeoutException ex)
             {
-                MessageBox.Show("server is disconnected...\n" +ex.Message);
+                MessageBox.Show("server is disconnected...\n" + ex.Message);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
         }
 
         private void OpponentDecline()
         {
-            MessageBox.Show("hey " + Username + ", " + Opponent + " decline to play with you", "notice", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            MessageBox.Show("hey " + Username + ", " + opponent + " decline to play with you", "notice",
+                MessageBoxButton.OK, MessageBoxImage.Asterisk);
             GoBackToLife();
         }
 
@@ -411,22 +418,25 @@ namespace FourRowClient
         {
             try
             {
-                GameWindow gq = new GameWindow();
-                gq.Title = Username + " vs " + Opponent;
-                gq.UserName = Username;
-                gq.ChoosedName = Username;
-                gq.OpponentName = Opponent;
-                gq.Client = Client;
-                gq.Callback = Callback;
-                gq.ww = this;
-                GameWindow gameWindow2 = gq;
+                var gq = new GameWindow
+                {
+                    Title = Username + " vs " + opponent,
+                    UserName = Username,
+                    ChoosedName = Username,
+                    OpponentName = opponent,
+                    Client = Client,
+                    Callback = Callback,
+                    ww = this
+                };
+                var gameWindow2 = gq;
                 Hide();
                 gameWindow2.Show();
-                AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
+                AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled =
+                    TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
         }
 
@@ -434,77 +444,83 @@ namespace FourRowClient
         {
             try
             {
-                GameWindow gw = new GameWindow();
-                gw.Title = Username + " vs " + Opponent;
-                gw.UserName = Username;
-                gw.ChoosedName = Opponent;
-                gw.OpponentName = Username;
-                gw.Client = Client;
-                gw.Callback = Callback;
-                gw.ww = this;
-                GameWindow gameWindow2 = gw;
+                var gw = new GameWindow
+                {
+                    Title = Username + " vs " + opponent,
+                    UserName = Username,
+                    ChoosedName = opponent,
+                    OpponentName = Username,
+                    Client = Client,
+                    Callback = Callback,
+                    ww = this
+                };
+                var gameWindow2 = gw;
                 Hide();
                 gameWindow2.Show();
-                AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled = TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
+                AllRegisterdButton.IsEnabled = AllHistoryButton.IsEnabled = PlayersGamesSumButton.IsEnabled =
+                    TowPlayersGameButton.IsEnabled = AllLiveButton.IsEnabled = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
         }
 
-        private void answer2Challenge(string theGuy)
+        private void Answer2Challenge(string theGuy)
         {
             try
             {
-                if (Opponent != null)
+                if (opponent != null)
                 {
-                    utils.pingServer();
-                    Client.opponentDeclineToPlay(theGuy, Username);
+                    utils.PingServer();
+                    Client.OpponentDeclineToPlay(theGuy, Username);
                 }
                 else
                 {
                     timer.Stop();
-                    Opponent = theGuy;
-                    Challenge_button.IsEnabled = false;
-                    lbUsers.IsEnabled = false;
-                    if (MessageBox.Show("           hey " + Username + " \n " + theGuy + " want to play with you \n- do you want to play with him ?", "notice", MessageBoxButton.YesNo, MessageBoxImage.Asterisk) == MessageBoxResult.No)
+                    opponent = theGuy;
+                    ChallengeButton.IsEnabled = false;
+                    LbUsers.IsEnabled = false;
+                    if (MessageBox.Show(
+                        "           hey " + Username + " \n " + theGuy +
+                        " want to play with you \n- do you want to play with him ?", "notice", MessageBoxButton.YesNo,
+                        MessageBoxImage.Asterisk) == MessageBoxResult.No)
                     {
                         GoBackToLife();
-                        utils.pingServer();
-                        Client.opponentDeclineToPlay(theGuy, Username);
+                        utils.PingServer();
+                        Client.OpponentDeclineToPlay(theGuy, Username);
                     }
                     else
                     {
-                        utils.pingServer();
-                        new Thread((ThreadStart)(() => Client.opponentAcceptToPlay(theGuy, Username))).Start();
+                        utils.PingServer();
+                        new Thread(() => Client.OpponentAcceptToPlay(theGuy, Username)).Start();
                     }
                 }
             }
             catch (FaultException<DbException> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (FaultException<Exception> ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
             catch (TimeoutException ex)
             {
-                MessageBox.Show("server is disconnected...\n" +ex.Message);
+                MessageBox.Show("server is disconnected...\n" + ex.Message);
                 timer.Stop();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nType: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\nType: " + ex.GetType());
             }
         }
 
         public void GoBackToLife()
         {
-            Challenge_button.IsEnabled = true;
-            lbUsers.IsEnabled = true;
-            Opponent = (string)null;
+            ChallengeButton.IsEnabled = true;
+            LbUsers.IsEnabled = true;
+            opponent = null;
             timer.Start();
         }
     }

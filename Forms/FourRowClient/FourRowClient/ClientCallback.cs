@@ -1,33 +1,41 @@
-﻿using FourRowClient.FourRowServiceReference;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using FourRowClient.FourRowServiceReference;
 
-namespace FourRowClient 
+namespace FourRowClient
 {
     [CallbackBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class ClientCallback : IFourRowServiceCallback
     {
         internal Action<string> answer2Challenge;
-        internal Action opponentDecline;
-        internal Action opponentQuited;
-        internal Action<int, double, double> updateGame;
         internal Action<string> endGame;
+        internal Action okGoBackToLife;
+        internal Action opponentDecline;
+        internal Action opponentQuitted;
         internal Action startGameChoosedGuy;
         internal Action startGameOpponent;
-        internal Action okGoBackToLife;
+        internal Action<int, double, double> updateGame;
 
-        public void HeyOpponentDeclineToPlay() => opponentDecline();
+        public void HeyOpponentDeclineToPlay()
+        {
+            opponentDecline();
+        }
 
-        public void LetsStart() => startGameOpponent();
+        public void LetsStart()
+        {
+            startGameOpponent();
+        }
 
-        public void NotifyOpponentChallenge(string currentPlayer) => answer2Challenge(currentPlayer);
+        public void NotifyOpponentChallenge(string currentPlayer)
+        {
+            answer2Challenge(currentPlayer);
+        }
 
-        public void OpponentAcceptToPlayLetsStart() => startGameChoosedGuy();
+        public void OpponentAcceptToPlayLetsStart()
+        {
+            startGameChoosedGuy();
+        }
 
         public void OpponentDisconnectedBeforeTheGame()
         {
@@ -35,9 +43,10 @@ namespace FourRowClient
             okGoBackToLife();
         }
 
-        public void OpponentDisconnectedThrowGameYouWon() => opponentQuited();
-
-        public void OtherPlayerConnected() => throw new NotImplementedException();
+        public void OpponentDisconnectedThrowGameYouWon()
+        {
+            opponentQuitted();
+        }
 
         public void OtherPlayerMoved(Tuple<MoveResult, int> moveResult, double pointX, double pointY)
         {
@@ -49,9 +58,5 @@ namespace FourRowClient
             endGame("you lost");
         }
 
-        public void OtherPlayerMoved(MoveResult moveResult, int location)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

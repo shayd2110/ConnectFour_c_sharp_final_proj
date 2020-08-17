@@ -1,38 +1,31 @@
 ﻿<Window x:Class="FourRowClient.GameWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FourRowClient"
-        Loaded="GameWin_Loaded" Closing="GameWin_Closing" Name="theWindow" Title="4 row game window"
-        Background="AliceBlue" Height="700" Width="1000" SizeToContent="WidthAndHeight"
-        ResizeMode="CanResizeWithGrip">
+        Loaded="GameWin_Loaded" Closing="GameWin_Closing" Name="TheWindow" Title="4 row game window"
+        Background="AliceBlue" Height="700" Width="1200" 
+        ResizeMode="NoResize">
 	<Grid>
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
 			<ColumnDefinition Width="662.666666666667"/>
-			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="474.063604240283"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
-		<Label Name="lbXagainstY" Grid.Column="1" Content="lala VS nana" HorizontalAlignment="Center"
+		<Label Name="LbXagainstY" Grid.Column="1" Content="lala VS nana" HorizontalAlignment="Center"
            FontStyle="Italic" Foreground="Brown" FontWeight="Bold" FontSize="40" Visibility="Visible"/>
-		<Label Name="lbUserName" Content="hey lala" FontStyle="Italic" Foreground="DarkBlue" FontSize="35"
-           Visibility="Visible"/>
-		<Label Name="lbturn1" Grid.Row="1" Content=" it's
-your
-turn!" FontStyle="Italic" FontSize="40"
+		<Label Grid.Row="0" Grid.Column="0" Name="LbUserName" Content="hey lala" FontStyle="Italic" Foreground="DarkBlue" FontSize="35"
+		       Visibility="Visible"/>
+		<Label Name="Lbturn1" Grid.Row="1" Content=" it's your turn!" FontStyle="Italic" FontSize="40"
+           Visibility="Visible" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"
+           Grid.Column="0" Margin="0,151.6,662,150.464"/>
+		<Label x:Name="Lbturn2" Grid.Row="1" Content=" it's your turn!" FontStyle="Italic" FontSize="40"
            Visibility="Visible" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-           Margin="21,0,15.2,159.464" Height="172" VerticalAlignment="Bottom"/>
-		<Label x:Name="lbturn2" Grid.Row="1" Content=" it's
-your
-turn!" FontStyle="Italic" FontSize="40"
-           Visibility="Visible" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-           Margin="10.6,141.6,-1.8,0" Grid.Column="2" Height="172" VerticalAlignment="Top"/>
-		<Grid Name="theGrid" Row="1" Column="1" Background="Blue">
+             Grid.Column="2" HorizontalAlignment="Center" Margin="0,151.6,0.6,150.464" />
+		<Grid Name="TheGrid" Row="1" Column="1" Background="Blue">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
@@ -50,49 +43,49 @@ turn!" FontStyle="Italic" FontSize="40"
 				<RowDefinition Height="*"/>
 				<RowDefinition Height="*"/>
 			</Grid.RowDefinitions>
-			<Canvas MouseLeftButtonUp="Game_Canvas_MouseDown" Name="Game_Canvas">
-				<Ellipse Grid.Column="0" Grid.Row="0" Fill="White" Height="70" Canvas.Left="14" Canvas.Top="18" Width="70"/>
-				<Ellipse Grid.Column="1" Grid.Row="0" Fill="White" Height="70" Canvas.Left="113" Canvas.Top="18" Width="70"/>
-				<Ellipse Grid.Column="2" Grid.Row="0" Fill="White" Height="70" Canvas.Left="205" Canvas.Top="18" Width="70"/>
-				<Ellipse Grid.Column="3" Grid.Row="0" Fill="White" Height="70" Canvas.Left="297" Canvas.Top="18" Width="70"/>
-				<Ellipse Grid.Column="4" Grid.Row="0" Fill="White" Height="70" Canvas.Left="391" Canvas.Top="18" Width="70"/>
-				<Ellipse Grid.Column="5" Grid.Row="0" Fill="White" Height="70" Canvas.Left="487" Canvas.Top="18" Width="70"/>
-				<Ellipse Grid.Column="6" Grid.Row="0" Fill="White" Height="70" Canvas.Left="579" Canvas.Top="18" Width="70"/>
-				<Ellipse Grid.Column="0" Grid.Row="1" Fill="White" Height="70" Canvas.Left="14" Canvas.Top="93" Width="70"/>
-				<Ellipse Grid.Column="1" Grid.Row="1" Fill="White" Height="70" Canvas.Left="113" Canvas.Top="93" Width="70"/>
-				<Ellipse Grid.Column="2" Grid.Row="1" Fill="White" Height="70" Canvas.Left="205" Canvas.Top="93" Width="70"/>
-				<Ellipse Grid.Column="3" Grid.Row="1" Fill="White" Height="70" Canvas.Left="297" Canvas.Top="93" Width="70"/>
-				<Ellipse Grid.Column="4" Grid.Row="1" Fill="White" Height="70" Canvas.Left="391" Canvas.Top="93" Width="70"/>
-				<Ellipse Grid.Column="5" Grid.Row="1" Fill="White" Height="70" Canvas.Left="487" Canvas.Top="93" Width="70"/>
-				<Ellipse Grid.Column="6" Grid.Row="1" Fill="White" Height="70" Canvas.Left="579" Canvas.Top="93" Width="70"/>
-				<Ellipse Grid.Column="0" Grid.Row="2" Fill="White" Height="70" Canvas.Left="14" Canvas.Top="168" Width="70"/>
-				<Ellipse Grid.Column="1" Grid.Row="2" Fill="White" Height="70" Canvas.Left="113" Canvas.Top="168" Width="70"/>
-				<Ellipse Grid.Column="2" Grid.Row="2" Fill="White" Height="70" Canvas.Left="205" Canvas.Top="168" Width="70"/>
-				<Ellipse Grid.Column="3" Grid.Row="2" Fill="White" Height="70" Canvas.Left="297" Canvas.Top="168" Width="70"/>
-				<Ellipse Grid.Column="4" Grid.Row="2" Fill="White" Height="70" Canvas.Left="391" Canvas.Top="168" Width="70"/>
-				<Ellipse Grid.Column="5" Grid.Row="2" Fill="White" Height="70" Canvas.Left="487" Canvas.Top="168" Width="70"/>
-				<Ellipse Grid.Column="6" Grid.Row="2" Fill="White" Height="70" Canvas.Left="579" Canvas.Top="168" Width="70"/>
-				<Ellipse Grid.Column="0" Grid.Row="3" Fill="White" Height="70" Canvas.Left="14" Canvas.Top="243" Width="70"/>
-				<Ellipse Grid.Column="1" Grid.Row="3" Fill="White" Height="70" Canvas.Left="113" Canvas.Top="243" Width="70"/>
-				<Ellipse Grid.Column="2" Grid.Row="3" Fill="White" Height="70" Canvas.Left="205" Canvas.Top="243" Width="70"/>
-				<Ellipse Grid.Column="3" Grid.Row="3" Fill="White" Height="70" Canvas.Left="297" Canvas.Top="243" Width="70"/>
-				<Ellipse Grid.Column="4" Grid.Row="3" Fill="White" Height="70" Canvas.Left="391" Canvas.Top="243" Width="70"/>
-				<Ellipse Grid.Column="5" Grid.Row="3" Fill="White" Height="70" Canvas.Left="487" Canvas.Top="243" Width="70"/>
-				<Ellipse Grid.Column="6" Grid.Row="3" Fill="White" Height="70" Canvas.Left="579" Canvas.Top="243" Width="70"/>
-				<Ellipse Grid.Column="0" Grid.Row="4" Fill="White" Height="70" Canvas.Left="14" Canvas.Top="318" Width="70"/>
-				<Ellipse Grid.Column="1" Grid.Row="4" Fill="White" Height="70" Canvas.Left="113" Canvas.Top="318" Width="70"/>
-				<Ellipse Grid.Column="2" Grid.Row="4" Fill="White" Height="70" Canvas.Left="205" Canvas.Top="318" Width="70"/>
-				<Ellipse Grid.Column="3" Grid.Row="4" Fill="White" Height="70" Canvas.Left="297" Canvas.Top="318" Width="70"/>
-				<Ellipse Grid.Column="4" Grid.Row="4" Fill="White" Height="70" Canvas.Left="391" Canvas.Top="318" Width="70"/>
-				<Ellipse Grid.Column="5" Grid.Row="4" Fill="White" Height="70" Canvas.Left="487" Canvas.Top="318" Width="70"/>
-				<Ellipse Grid.Column="6" Grid.Row="4" Fill="White" Height="70" Canvas.Left="579" Canvas.Top="318" Width="70"/>
-				<Ellipse Grid.Column="0" Grid.Row="5" Fill="White" Height="70" Canvas.Left="14" Canvas.Top="396" Width="70"/>
-				<Ellipse Grid.Column="1" Grid.Row="5" Fill="White" Height="70" Canvas.Left="113" Canvas.Top="396" Width="70"/>
-				<Ellipse Grid.Column="2" Grid.Row="5" Fill="White" Height="70" Canvas.Left="205" Canvas.Top="396" Width="70"/>
-				<Ellipse Grid.Column="3" Grid.Row="5" Fill="White" Height="70" Canvas.Left="297" Canvas.Top="396" Width="70"/>
-				<Ellipse Grid.Column="4" Grid.Row="5" Fill="White" Height="70" Canvas.Left="391" Canvas.Top="396" Width="70"/>
-				<Ellipse Grid.Column="5" Grid.Row="5" Fill="White" Height="70" Canvas.Left="487" Canvas.Top="396" Width="70"/>
-				<Ellipse Grid.Column="6" Grid.Row="5" Fill="White" Height="70" Canvas.Left="579" Canvas.Top="396" Width="70"/>
+			<Canvas MouseLeftButtonUp="Game_Canvas_MouseDown" Name="GameCanvas">
+				<Ellipse Fill="White" Height="70" Canvas.Left="14" Canvas.Top="18" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="113" Canvas.Top="18" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="205" Canvas.Top="18" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="297" Canvas.Top="18" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="391" Canvas.Top="18" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="487" Canvas.Top="18" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="579" Canvas.Top="18" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="14" Canvas.Top="93" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="113" Canvas.Top="93" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="205" Canvas.Top="93" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="297" Canvas.Top="93" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="391" Canvas.Top="93" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="487" Canvas.Top="93" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="579" Canvas.Top="93" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="14" Canvas.Top="168" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="113" Canvas.Top="168" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="205" Canvas.Top="168" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="297" Canvas.Top="168" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="391" Canvas.Top="168" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="487" Canvas.Top="168" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="579" Canvas.Top="168" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="14" Canvas.Top="243" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="113" Canvas.Top="243" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="205" Canvas.Top="243" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="297" Canvas.Top="243" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="391" Canvas.Top="243" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="487" Canvas.Top="243" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="579" Canvas.Top="243" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="14" Canvas.Top="318" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="113" Canvas.Top="318" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="205" Canvas.Top="318" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="297" Canvas.Top="318" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="391" Canvas.Top="318" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="487" Canvas.Top="318" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="579" Canvas.Top="318" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="14" Canvas.Top="396" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="113" Canvas.Top="396" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="205" Canvas.Top="396" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="297" Canvas.Top="396" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="391" Canvas.Top="396" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="487" Canvas.Top="396" Width="70"/>
+				<Ellipse Fill="White" Height="70" Canvas.Left="579" Canvas.Top="396" Width="70"/>
 			</Canvas>
 		</Grid>
 	</Grid>

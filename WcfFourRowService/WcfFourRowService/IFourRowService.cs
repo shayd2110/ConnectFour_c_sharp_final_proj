@@ -22,111 +22,111 @@ namespace WcfFourRowService
         [FaultContract(typeof(WrongPasswordFault))]
         [FaultContract(typeof(Exception))]
         [OperationContract]
-        void clientConnected(string userName, string hashedPasswd);
+        void ClientConnected(string userName, string hashedPasswd);
 
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(UserExistsFault))]
         [FaultContract(typeof(Exception))]
         [OperationContract]
-        void clientRegisterd(string userName, string hashedPasswd);
+        void ClientRegistered(string userName, string hashedPasswd);
 
         [FaultContract(typeof(Exception))]
         [FaultContract(typeof(UserAlreadyConnectedFault))]
         [OperationContract]
-        void clientDisconnected(string userName);
+        void ClientDisconnected(string userName);
 
 
 
         [FaultContract(typeof(Exception))]
         [OperationContract]
-        void clientDisconnectedBeforeGame(string userName, string opponent, string whosOut);
+        void ClientDisconnectedBeforeGame(string userName, string opponent, string whosOut);
 
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
         [OperationContract]
-        void clientDisconnectedThrowGame(string currentPlayer, string opponent, string whosOut);
+        void ClientDisconnectedThrowGame(string currentPlayer, string opponent, string whosOut);
 
 
         [FaultContract(typeof(Exception))]
         [OperationContract]
-        void wantToPlayWithClient(string currentPlayer, string opponent);
+        void WantToPlayWithClient(string currentPlayer, string opponent);
 
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
         [OperationContract]
-        void opponentAcceptToPlay(string currentPlayer, string opponent);
+        void OpponentAcceptToPlay(string currentPlayer, string opponent);
 
         [FaultContract(typeof(Exception))]
         [OperationContract]
-        void opponentDeclineToPlay(string currentPlayer, string opponent);
+        void OpponentDeclineToPlay(string currentPlayer, string opponent);
 
         [OperationContract]
-        List<string> getClientsThatNotPlayNow();
+        List<string> GetClientsThatNotPlayNow();
 
         #region DB methods
         [OperationContract]
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
-        List<string> getAllUsersGamesHistory();
+        List<string> GetAllUsersGamesHistory();
 
         [OperationContract]
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
-        List<string> GetAllUsersInDB();
+        List<string> GetAllUsersInDb();
 
         [OperationContract]
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
-        List<string> getAllUsersGamesHistoryOrderedByName();
+        List<string> GetAllUsersGamesHistoryOrderedByName();
 
         [OperationContract]
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
-        List<string> getAllUsersGamesHistoryOrderedByGames();
+        List<string> GetAllUsersGamesHistoryOrderedByGames();
 
         [OperationContract]
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
-        List<string> getAllUsersGamesHistoryOrderedByWins();
+        List<string> GetAllUsersGamesHistoryOrderedByWins();
 
         [OperationContract]
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
-        List<string> getAllUsersGamesHistoryOrderedByLoses();
+        List<string> GetAllUsersGamesHistoryOrderedByLoses();
 
         [OperationContract]
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
-        List<string> getAllUsersGamesHistoryOrderedByPoints();
+        List<string> GetAllUsersGamesHistoryOrderedByPoints();
 
         [OperationContract]
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
-        List<string> allTheGamesThatPlayesSoFar();
+        List<string> AllTheGamesThatPlayesSoFar();
 
         [OperationContract]
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
-        List<string> allTheGamesThatPlayesNow();
+        List<string> AllTheGamesThatPlayesNow();
 
         [OperationContract]
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
-        List<string> allTheGamesBetweenTwoClients(string userName1, string userName2);
+        List<string> AllTheGamesBetweenTwoClients(string userName1, string userName2);
 
         [OperationContract]
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
-        List<string> allTheGamesOfSomeClient(string userName);
+        List<string> AllTheGamesOfSomeClient(string userName);
 
-        List<UserHistory> allUsersGamesHistoryPrivately();
+        List<UserHistory> AllUsersGamesHistoryPrivately();
 
         #endregion
 
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
         [OperationContract]
-        Tuple<MoveResult, int> reportMove(
+        Tuple<MoveResult, int> ReportMove(
           string currentPlayer,
           string opponent,
           string whoMoved,
@@ -135,27 +135,27 @@ namespace WcfFourRowService
           double pointY);
 
         [OperationContract]
-        void getMeBackToWaitingList(string userName);
+        void GetMeBackToWaitingList(string userName);
         
 
         [FaultContract(typeof(Exception))]
         [OperationContract]
-        int getMyPos(string currentPlayer, string opponent, string whoWantIt);
+        int GetMyPos(string currentPlayer, string opponent, string whoWantIt);
 
         [FaultContract(typeof(Exception))]
         [OperationContract]
-        void setMyPos(string currentPlayer, string opponent, string whoWantIt, int pos);
+        void SetMyPos(string currentPlayer, string opponent, string whoWantIt, int pos);
 
         [OperationContract]
-        void killTheGame(string currentPlayer, string opponent);
+        void KillTheGame(string currentPlayer, string opponent);
 
         [OperationContract]
         [FaultContract(typeof(DbException))]
         [FaultContract(typeof(Exception))]
-        bool clearUsers();
+        bool ClearUsers();
 
         [OperationContract]
-        bool ping();
+        bool Ping();
 
 
     }/*end of -IFourRowService- interface*/

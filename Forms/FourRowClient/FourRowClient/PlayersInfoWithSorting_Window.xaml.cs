@@ -1,56 +1,48 @@
-﻿using FourRowClient.FourRowServiceReference;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data.Common;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using FourRowClient.FourRowServiceReference;
 
 namespace FourRowClient
 {
     /// <summary>
-    /// this class represent window that present users statics with sorting options
+    ///     this class represent window that present users statics with sorting options
     /// </summary>
-    public partial class PlayersInfoWithSorting_Window : Window
+    public partial class PlayersInfoWithSortingWindow
     {
-        //Data members
-        public FourRowServiceClient Client { get; internal set; }
-        private Utils utils = new Utils();
-        public PlayersInfoWithSorting_Window()
+        private readonly Utils utils = new Utils();
+
+        public PlayersInfoWithSortingWindow()
 
         {
             InitializeComponent();
             utils.Client = Client;
         }
 
+        //Data members
+        public FourRowServiceClient Client { get; internal set; }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
                 utils.Client = Client;
-                utils.pingServer();
-                List<string> allUsersStats = Client.getAllUsersGamesHistory();
+                utils.PingServer();
+                var allUsersStats = Client.GetAllUsersGamesHistory();
 
                 if (allUsersStats.Count == 0)
-                    allUsersStats.Add("\t\t\tthere is no games that played yet\n\t\t\tthere for no statics for users yet");
-                lbUsersStats.ItemsSource = allUsersStats;
+                    allUsersStats.Add(
+                        "\t\t\tthere is no games that played yet\n\t\t\tthere for no statics for users yet");
+                LbUsersStats.ItemsSource = allUsersStats;
             }
             catch (FaultException<DbException> fault)
             {
-                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType().ToString() );
+                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType());
             }
             catch (FaultException<Exception> fault)
             {
-                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType().ToString() );
+                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType());
             }
             catch (TimeoutException)
             {
@@ -58,31 +50,32 @@ namespace FourRowClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\n" + "Type: " + ex.GetType().ToString() );
+                MessageBox.Show(ex.Message + "\n" + "Type: " + ex.GetType());
             }
         }
 
         //sorting options
 
-        private void byGames_Click(object sender, RoutedEventArgs e)
+        private void ByGames_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                utils.pingServer();
-                List<string> allUsersStatsByGames = Client.getAllUsersGamesHistoryOrderedByGames();
+                utils.PingServer();
+                var allUsersStatsByGames = Client.GetAllUsersGamesHistoryOrderedByGames();
 
                 if (allUsersStatsByGames.Count == 0)
-                    allUsersStatsByGames.Add("\t\t\tthere is no games that played yet\n\t\t\t there for no statics for users yet");
+                    allUsersStatsByGames.Add(
+                        "\t\t\tthere is no games that played yet\n\t\t\t there for no statics for users yet");
 
-                lbUsersStats.ItemsSource = allUsersStatsByGames;
+                LbUsersStats.ItemsSource = allUsersStatsByGames;
             }
             catch (FaultException<DbException> fault)
             {
-                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType().ToString() );
+                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType());
             }
             catch (FaultException<Exception> fault)
             {
-                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType().ToString() );
+                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType());
             }
             catch (TimeoutException)
             {
@@ -90,29 +83,30 @@ namespace FourRowClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\n" + "Type: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\n" + "Type: " + ex.GetType());
             }
         }
 
-        private void byName_Click(object sender, RoutedEventArgs e)
+        private void ByName_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                utils.pingServer();
-                List<string> allUsersStatsByName = Client.getAllUsersGamesHistoryOrderedByName();
+                utils.PingServer();
+                var allUsersStatsByName = Client.GetAllUsersGamesHistoryOrderedByName();
 
                 if (allUsersStatsByName.Count == 0)
-                    allUsersStatsByName.Add("\t\t\tthere is no games that played yet\n\t\t\t there for no statics for users yet");
+                    allUsersStatsByName.Add(
+                        "\t\t\tthere is no games that played yet\n\t\t\t there for no statics for users yet");
 
-                lbUsersStats.ItemsSource = allUsersStatsByName;
+                LbUsersStats.ItemsSource = allUsersStatsByName;
             }
             catch (FaultException<DbException> fault)
             {
-                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType().ToString() );
+                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType());
             }
             catch (FaultException<Exception> fault)
             {
-                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType().ToString() );
+                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType());
             }
             catch (TimeoutException)
             {
@@ -120,29 +114,30 @@ namespace FourRowClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\n" + "Type: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\n" + "Type: " + ex.GetType());
             }
         }
 
-        private void byPoints_Click(object sender, RoutedEventArgs e)
+        private void ByPoints_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                utils.pingServer();
-                List<string> allUsersStatsByPoints = Client.getAllUsersGamesHistoryOrderedByPoints();
+                utils.PingServer();
+                var allUsersStatsByPoints = Client.GetAllUsersGamesHistoryOrderedByPoints();
 
                 if (allUsersStatsByPoints.Count == 0)
-                    allUsersStatsByPoints.Add("\t\t\tthere is no games that played yet\n\t\t\t there for no statics for users yet");
+                    allUsersStatsByPoints.Add(
+                        "\t\t\tthere is no games that played yet\n\t\t\t there for no statics for users yet");
 
-                lbUsersStats.ItemsSource = allUsersStatsByPoints;
+                LbUsersStats.ItemsSource = allUsersStatsByPoints;
             }
             catch (FaultException<DbException> fault)
             {
-                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType().ToString());
+                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType());
             }
             catch (FaultException<Exception> fault)
             {
-                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType().ToString() );
+                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType());
             }
             catch (TimeoutException)
             {
@@ -150,29 +145,30 @@ namespace FourRowClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\n" + "Type: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\n" + "Type: " + ex.GetType());
             }
         }
 
-        private void byWins_Click(object sender, RoutedEventArgs e)
+        private void ByWins_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                utils.pingServer();
-                List<string> allUsersStatsByWins = Client.getAllUsersGamesHistoryOrderedByWins();
+                utils.PingServer();
+                var allUsersStatsByWins = Client.GetAllUsersGamesHistoryOrderedByWins();
 
                 if (allUsersStatsByWins.Count == 0)
-                    allUsersStatsByWins.Add("\t\t\tthere is no games that played yet\n\t\t\t there for no statics for users yet");
+                    allUsersStatsByWins.Add(
+                        "\t\t\tthere is no games that played yet\n\t\t\t there for no statics for users yet");
 
-                lbUsersStats.ItemsSource = allUsersStatsByWins;
+                LbUsersStats.ItemsSource = allUsersStatsByWins;
             }
             catch (FaultException<DbException> fault)
             {
-                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType().ToString());
+                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType());
             }
             catch (FaultException<Exception> fault)
             {
-                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType().ToString());
+                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType());
             }
             catch (TimeoutException)
             {
@@ -180,29 +176,30 @@ namespace FourRowClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\n" + "Type: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\n" + "Type: " + ex.GetType());
             }
         }
 
-        private void byLoses_Click(object sender, RoutedEventArgs e)
+        private void ByLoses_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                utils.pingServer();
-                List<string> allUsersStatsByLoses = Client.getAllUsersGamesHistoryOrderedByLoses();
+                utils.PingServer();
+                var allUsersStatsByLoses = Client.GetAllUsersGamesHistoryOrderedByLoses();
 
                 if (allUsersStatsByLoses.Count == 0)
-                    allUsersStatsByLoses.Add("\t\t\tthere is no games that played yet\n\t\t\t there for no statics for users yet");
+                    allUsersStatsByLoses.Add(
+                        "\t\t\tthere is no games that played yet\n\t\t\t there for no statics for users yet");
 
-                lbUsersStats.ItemsSource = allUsersStatsByLoses;
+                LbUsersStats.ItemsSource = allUsersStatsByLoses;
             }
             catch (FaultException<DbException> fault)
             {
-                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType().ToString());
+                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType());
             }
             catch (FaultException<Exception> fault)
             {
-                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType().ToString() );
+                MessageBox.Show(fault.Message + "\n" + "Type: " + fault.GetType());
             }
             catch (TimeoutException)
             {
@@ -210,7 +207,7 @@ namespace FourRowClient
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\n" + "Type: " + ex.GetType().ToString());
+                MessageBox.Show(ex.Message + "\n" + "Type: " + ex.GetType());
             }
         }
     }

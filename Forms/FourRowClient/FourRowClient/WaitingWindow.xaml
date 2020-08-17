@@ -1,9 +1,6 @@
 ﻿<Window x:Class="FourRowClient.WaitingWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FourRowClient"
         Loaded="Window_Loaded" Closed="Window_Closed" Title="waiting window" Height="450" Width="800"
         ResizeMode="NoResize">
 	<Grid>
@@ -20,18 +17,18 @@
 			<RowDefinition Height="35*"/>
 		</Grid.RowDefinitions>
 		<Image Source="/icon.png" HorizontalAlignment="Left"/>
-		<TextBlock Name="tbHeader" Grid.Row="1" TextWrapping="WrapWithOverflow" FontSize="16"
+		<TextBlock Name="TbHeader" Grid.Row="1" TextWrapping="WrapWithOverflow" FontSize="16"
                HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
 		<StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="2">
 			<Label>Users:</Label>
-			<ListBox SelectionChanged="lbUsers_SelectionChanged" Name="lbUsers" Margin="10,0,10,0" Height="238"
+			<ListBox SelectionChanged="lbUsers_SelectionChanged" Name="LbUsers" Margin="10,0,10,0" Height="238"
                SelectionMode="Multiple"/>
-			<Button Click="Challenge_button_Click" Name="Challenge_button" Content="Challenge Player!" Height="21"
+			<Button Click="Challenge_button_Click" Name="ChallengeButton" Content="Challenge Player!" Height="21"
               Margin="150,10,150,10" ToolTip="Pick one player to play with"
-              IsEnabled="{Binding ElementName=lbUsers, Path=SelectedItems.Count}"/>
+              IsEnabled="{Binding ElementName=LbUsers, Path=SelectedItems.Count}"/>
 		</StackPanel>
 		<Label Grid.Row="2" VerticalAlignment="Bottom">Serach options:</Label>
-		<UniformGrid x:Name="buttons_Ugrid" Grid.Row="3" Columns="2" Rows="3" Margin="10,0,0.4,0">
+		<UniformGrid x:Name="ButtonsUgrid" Grid.Row="3" Columns="2" Rows="3" Margin="10,0,0.4,0">
 			<Panel.Background>
 				<ImageBrush/>
 			</Panel.Background>
@@ -49,15 +46,14 @@
 			<Button Click="AllHistoryButton_Click" Name="AllHistoryButton" Margin="0,10,37.6,7.4">
 				<TextBlock Text="All Games History" TextWrapping="Wrap"/>
 			</Button>
-			<Button Click="AllLiveButton_Click" Name="AllLiveButton" Margin="0,10,37.6,7.4">
+			<Button Click="AllLiveGamesButton_Click" Name="AllLiveButton" Margin="0,10,37.6,7.4">
 				<TextBlock Text="All Live Games" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center"/>
 			</Button>
-			<Button Click="AllUsersInDB_Click" Name="AllUsersInDB" Margin="0,10,37.6,7.4" Visibility="Hidden">
+			<Button Click="AllUsersInDB_Click" Name="AllUsersInDb" Margin="0,10,37.6,7.4" Visibility="Hidden">
 				<TextBlock Text="(DEBUG!) All  users in the DB" TextWrapping="Wrap" HorizontalAlignment="Center"
                    TextAlignment="Center"/>
 			</Button>
 		</UniformGrid>
-		<TextBox Name="tbInfo" Grid.Row="4" Grid.ColumnSpan="3" Height="150">
-		</TextBox>
+		<TextBox Name="TbInfo" Grid.Row="4" Grid.ColumnSpan="3" Height="150" />
 	</Grid>
 </Window>

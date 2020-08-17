@@ -2,7 +2,7 @@
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfFourRowService/Service1/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
-  <xs:element name="clientConnected">
+  <xs:element name="ClientConnected">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
@@ -10,12 +10,12 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="clientConnectedResponse">
+  <xs:element name="ClientConnectedResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="clientRegisterd">
+  <xs:element name="ClientRegistered">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
@@ -23,24 +23,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="clientRegisterdResponse">
+  <xs:element name="ClientRegisteredResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="clientDisconnected">
+  <xs:element name="ClientDisconnected">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="clientDisconnectedResponse">
+  <xs:element name="ClientDisconnectedResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="clientDisconnectedBeforeGame">
+  <xs:element name="ClientDisconnectedBeforeGame">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
@@ -49,12 +49,12 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="clientDisconnectedBeforeGameResponse">
+  <xs:element name="ClientDisconnectedBeforeGameResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="clientDisconnectedThrowGame">
+  <xs:element name="ClientDisconnectedThrowGame">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="currentPlayer" nillable="true" type="xs:string" />
@@ -63,12 +63,12 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="clientDisconnectedThrowGameResponse">
+  <xs:element name="ClientDisconnectedThrowGameResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="wantToPlayWithClient">
+  <xs:element name="WantToPlayWithClient">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="currentPlayer" nillable="true" type="xs:string" />
@@ -76,12 +76,12 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="wantToPlayWithClientResponse">
+  <xs:element name="WantToPlayWithClientResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="opponentAcceptToPlay">
+  <xs:element name="OpponentAcceptToPlay">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="currentPlayer" nillable="true" type="xs:string" />
@@ -89,12 +89,12 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="opponentAcceptToPlayResponse">
+  <xs:element name="OpponentAcceptToPlayResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="opponentDeclineToPlay">
+  <xs:element name="OpponentDeclineToPlay">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="currentPlayer" nillable="true" type="xs:string" />
@@ -102,132 +102,132 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="opponentDeclineToPlayResponse">
+  <xs:element name="OpponentDeclineToPlayResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getClientsThatNotPlayNow">
+  <xs:element name="GetClientsThatNotPlayNow">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getClientsThatNotPlayNowResponse">
+  <xs:element name="GetClientsThatNotPlayNowResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getClientsThatNotPlayNowResult" nillable="true" type="q1:ArrayOfstring" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetClientsThatNotPlayNowResult" nillable="true" type="q1:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAllUsersGamesHistory">
+  <xs:element name="GetAllUsersGamesHistory">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAllUsersGamesHistoryResponse">
+  <xs:element name="GetAllUsersGamesHistoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getAllUsersGamesHistoryResult" nillable="true" type="q2:ArrayOfstring" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllUsersGamesHistoryResult" nillable="true" type="q2:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAllUsersInDB">
+  <xs:element name="GetAllUsersInDb">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAllUsersInDBResponse">
+  <xs:element name="GetAllUsersInDbResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllUsersInDBResult" nillable="true" type="q3:ArrayOfstring" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllUsersInDbResult" nillable="true" type="q3:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAllUsersGamesHistoryOrderedByName">
+  <xs:element name="GetAllUsersGamesHistoryOrderedByName">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAllUsersGamesHistoryOrderedByNameResponse">
+  <xs:element name="GetAllUsersGamesHistoryOrderedByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getAllUsersGamesHistoryOrderedByNameResult" nillable="true" type="q4:ArrayOfstring" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllUsersGamesHistoryOrderedByNameResult" nillable="true" type="q4:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAllUsersGamesHistoryOrderedByGames">
+  <xs:element name="GetAllUsersGamesHistoryOrderedByGames">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAllUsersGamesHistoryOrderedByGamesResponse">
+  <xs:element name="GetAllUsersGamesHistoryOrderedByGamesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getAllUsersGamesHistoryOrderedByGamesResult" nillable="true" type="q5:ArrayOfstring" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllUsersGamesHistoryOrderedByGamesResult" nillable="true" type="q5:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAllUsersGamesHistoryOrderedByWins">
+  <xs:element name="GetAllUsersGamesHistoryOrderedByWins">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAllUsersGamesHistoryOrderedByWinsResponse">
+  <xs:element name="GetAllUsersGamesHistoryOrderedByWinsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getAllUsersGamesHistoryOrderedByWinsResult" nillable="true" type="q6:ArrayOfstring" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllUsersGamesHistoryOrderedByWinsResult" nillable="true" type="q6:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAllUsersGamesHistoryOrderedByLoses">
+  <xs:element name="GetAllUsersGamesHistoryOrderedByLoses">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAllUsersGamesHistoryOrderedByLosesResponse">
+  <xs:element name="GetAllUsersGamesHistoryOrderedByLosesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getAllUsersGamesHistoryOrderedByLosesResult" nillable="true" type="q7:ArrayOfstring" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllUsersGamesHistoryOrderedByLosesResult" nillable="true" type="q7:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAllUsersGamesHistoryOrderedByPoints">
+  <xs:element name="GetAllUsersGamesHistoryOrderedByPoints">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getAllUsersGamesHistoryOrderedByPointsResponse">
+  <xs:element name="GetAllUsersGamesHistoryOrderedByPointsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getAllUsersGamesHistoryOrderedByPointsResult" nillable="true" type="q8:ArrayOfstring" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllUsersGamesHistoryOrderedByPointsResult" nillable="true" type="q8:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="allTheGamesThatPlayesSoFar">
+  <xs:element name="AllTheGamesThatPlayesSoFar">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="allTheGamesThatPlayesSoFarResponse">
+  <xs:element name="AllTheGamesThatPlayesSoFarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="allTheGamesThatPlayesSoFarResult" nillable="true" type="q9:ArrayOfstring" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AllTheGamesThatPlayesSoFarResult" nillable="true" type="q9:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="allTheGamesThatPlayesNow">
+  <xs:element name="AllTheGamesThatPlayesNow">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="allTheGamesThatPlayesNowResponse">
+  <xs:element name="AllTheGamesThatPlayesNowResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="allTheGamesThatPlayesNowResult" nillable="true" type="q10:ArrayOfstring" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AllTheGamesThatPlayesNowResult" nillable="true" type="q10:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="allTheGamesBetweenTwoClients">
+  <xs:element name="AllTheGamesBetweenTwoClients">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="userName1" nillable="true" type="xs:string" />
@@ -235,28 +235,28 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="allTheGamesBetweenTwoClientsResponse">
+  <xs:element name="AllTheGamesBetweenTwoClientsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="allTheGamesBetweenTwoClientsResult" nillable="true" type="q11:ArrayOfstring" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AllTheGamesBetweenTwoClientsResult" nillable="true" type="q11:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="allTheGamesOfSomeClient">
+  <xs:element name="AllTheGamesOfSomeClient">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="allTheGamesOfSomeClientResponse">
+  <xs:element name="AllTheGamesOfSomeClientResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="allTheGamesOfSomeClientResult" nillable="true" type="q12:ArrayOfstring" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AllTheGamesOfSomeClientResult" nillable="true" type="q12:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="reportMove">
+  <xs:element name="ReportMove">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="currentPlayer" nillable="true" type="xs:string" />
@@ -268,26 +268,26 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="reportMoveResponse">
+  <xs:element name="ReportMoveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="reportMoveResult" nillable="true" type="q13:TupleOfMoveResultint8Ro5gioI" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ReportMoveResult" nillable="true" type="q13:TupleOfMoveResultint8Ro5gioI" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getMeBackToWaitingList">
+  <xs:element name="GetMeBackToWaitingList">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getMeBackToWaitingListResponse">
+  <xs:element name="GetMeBackToWaitingListResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getMyPos">
+  <xs:element name="GetMyPos">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="currentPlayer" nillable="true" type="xs:string" />
@@ -296,14 +296,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="getMyPosResponse">
+  <xs:element name="GetMyPosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="getMyPosResult" type="xs:int" />
+        <xs:element minOccurs="0" name="GetMyPosResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="setMyPos">
+  <xs:element name="SetMyPos">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="currentPlayer" nillable="true" type="xs:string" />
@@ -313,12 +313,12 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="setMyPosResponse">
+  <xs:element name="SetMyPosResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="killTheGame">
+  <xs:element name="KillTheGame">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="currentPlayer" nillable="true" type="xs:string" />
@@ -326,32 +326,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="killTheGameResponse">
+  <xs:element name="KillTheGameResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="clearUsers">
+  <xs:element name="ClearUsers">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="clearUsersResponse">
+  <xs:element name="ClearUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="clearUsersResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ClearUsersResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ping">
+  <xs:element name="Ping">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="pingResponse">
+  <xs:element name="PingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="pingResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="PingResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

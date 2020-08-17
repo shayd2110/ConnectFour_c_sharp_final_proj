@@ -29,9 +29,11 @@ namespace FourRowClient
 
         public Ball(Point p, double ew, double eh, double xsp, double ysp)
         {
-            El = new Ellipse();
-            El.Width = ew;
-            El.Height = eh;
+            El = new Ellipse
+            {
+                Width = ew,
+                Height = eh
+            };
             X = p.X - El.Width / 2.0;
             Y = p.Y - El.Height / 2.0;
             XMove = xsp;
