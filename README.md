@@ -7,3 +7,15 @@
 1. Open ‏‏FourRowHost.exe
 2. Open ‏‏FourRowClient.exe ( you need to open it twice to play with another person)
 3. Have Fun!!
+
+## Some Screenshots
+
+\*Login window
+![Login window](https://i.ibb.co/SBwtBYJ/login.png)
+
+\*Wellcome window
+
+![Wellcome window](https://i.ibb.co/JFhphk3/Wellcome.png)
+
+\*Game example
+![Game example](https://i.ibb.co/Ptpkmd3/game-example.png)
