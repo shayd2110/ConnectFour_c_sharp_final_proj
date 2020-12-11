@@ -1,0 +1,23 @@
+﻿<Window x:Class="FourRowClient.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LogIn" Height="350" Width="300">
+	<Grid Name="MainGrid">
+		<StackPanel>
+			<Label Content="--------------------------------------------------------" FontSize="15"
+             Foreground="DarkBlue"/>
+			<Label Foreground="DarkBlue">Username:</Label>
+			<TextBox Name="TbUsername" Margin="10"/>
+			<Label Foreground="DarkBlue">Password:</Label>
+			<PasswordBox Name="TbPasswrd" Margin="10"/>
+			<Button Click="Button_Connect_Click" Foreground="DarkBlue" Margin="50,0,50,0" Content="Connect"/>
+			<Button Click="ButtonRegister_Click" Foreground="DarkBlue" Margin="50,10,50,10" Content="Register"/>
+			<Label Content="--------------------------------------------------------" FontSize="15"
+             Foreground="DarkBlue"/>
+			<Button Click="ClearUsers_Click" Foreground="DarkBlue" Margin="50,0,50,0"
+              Content="Clear DB(for debug usage ONLY!)" Visibility="Hidden"/>
+			<Button Click="Disconnect_button_Click" x:Name="DisconnectButton" Foreground="DarkBlue"
+              Margin="50,10,49.6,0" Content="Disconnect user(for debug usage ONLY!)" Visibility="Visible"/>
+		</StackPanel>
+	</Grid>
+</Window>
