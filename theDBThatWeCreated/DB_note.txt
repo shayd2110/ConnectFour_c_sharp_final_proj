@@ -1,2 +1,0 @@
-/*note*/
-please put the DB in --> C:\fourinrow\databases
