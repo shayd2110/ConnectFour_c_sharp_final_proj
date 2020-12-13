@@ -1,6 +1,6 @@
 # ConnectFour_c_sharp_final_proj
 
--   This is Final project in C# & .NET course at Tel Hai collage
+-   This is Final project in C# & .NET course at Tel Hai College
 
 ## How to play?
 
